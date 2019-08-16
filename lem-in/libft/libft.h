@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 14:59:28 by vesingh           #+#    #+#             */
-/*   Updated: 2019/07/23 14:50:58 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/16 11:34:12 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ char				*ft_strdupdel(char **str);
 char				*ft_strjoinfree(char *s1, char *s2);
 int					get_next_line(const int fd, char **line);
 void				ft_swap(int *a, int *b);
+long long			ft_atoll(char *str);
 
 #endif

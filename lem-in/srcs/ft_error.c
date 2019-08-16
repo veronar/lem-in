@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lemin.h                                            :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/16 08:14:37 by vesingh          ###   ########.fr       */
+/*   Created: 2019/08/16 11:11:24 by vesingh           #+#    #+#             */
+/*   Updated: 2019/08/16 11:21:35 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEMIN_H
-# define LEMIN_H
-# include "../libft/libft.h"
+#include "lemin.h"
 
-
-#endif
+void		ft_error(void)
+{
+	ft_putendl_fd("Error", 2);
+	exit(1);
+}

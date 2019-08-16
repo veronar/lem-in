@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.c                                           :+:      :+:    :+:   */
+/*   lemin.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 08:04:33 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/16 08:17:34 by vesingh          ###   ########.fr       */
+/*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
+/*   Updated: 2019/08/16 11:21:32 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lemin.h"
+#ifndef LEMIN_H
+# define LEMIN_H
+# include "../libft/libft.h"
+# include <stdio.h>
 
-int		main(int ac, char **av)
-{
+void		ft_reader();
+int			ft_do_line(char *str);
+void		ft_error(void);
 
-	return (0);
-}
+void		ft_comment(char **str);
+
+#endif

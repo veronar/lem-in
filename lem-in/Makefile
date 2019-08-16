@@ -6,13 +6,13 @@
 #    By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 13:33:16 by vesingh           #+#    #+#              #
-#    Updated: 2019/08/16 08:11:23 by vesingh          ###   ########.fr        #
+#    Updated: 2019/08/16 11:14:34 by vesingh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = lem-in
 
-L_DIR = ./lem_inc/
+L_DIR = ./srcs/
 
 LIBRARY_NAME = libft.a
 LIBRARY_DIR = ./libft/
@@ -21,6 +21,9 @@ LIBRARY = $(addprefix $(LIBRARY_DIR), $(LIBRARY_NAME))
 FLAGS = -Wall -Werror -Wextra
 
 LEM_FUNC =	lem-in.c\
+			ft_reader.c\
+			ft_do_line.c\
+			ft_error.c\
 
 LEM_FILES = $(addprefix $(L_DIR), $(LEM_FUNC))
 
