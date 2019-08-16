@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/16 12:05:46 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/16 12:17:23 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int			ft_ants(char **line)
 {
 	int ants;
-	
+
 	ants = 0;
 	while (*line)
 	{
