@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/16 11:21:32 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/19 07:52:32 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 void		ft_reader();
 int			ft_do_line(char *str);
 void		ft_error(void);
+void		ft_usage(void);
 
 void		ft_comment(char **str);
 

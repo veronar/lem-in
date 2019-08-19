@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/16 12:17:23 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/19 08:00:42 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			ft_ants(char **line)
 {
-	int ants;
+	long long ants;
 
 	ants = 0;
 	while (*line)
@@ -25,7 +25,6 @@ int			ft_ants(char **line)
 			ft_error();
 		}
 	}
-	ants = 0;
 	get_next_line(0, line);
 	ants = ft_atoll(*line);
 	if (ants < 1 || ants > 2147483647)
