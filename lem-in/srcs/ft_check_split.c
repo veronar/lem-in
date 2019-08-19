@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 09:46:32 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 11:32:37 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/19 14:16:50 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int		ft_check_split(char *str)
 	else if (a_size == 3)
 	{
 		ft_rooms_func(arr);
+		ft_free_her(arr);
 	}
 	return (1);
 }

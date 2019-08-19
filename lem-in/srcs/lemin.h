@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 11:46:31 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/19 14:13:46 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include "../libft/libft.h"
 # include <stdio.h>
 
-void		ft_reader();
+void		ft_reader(void);
 int			ft_do_line(char *str, int *start, int *end);
 void		ft_error(void);
 void		ft_usage(void);

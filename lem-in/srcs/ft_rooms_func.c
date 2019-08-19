@@ -6,11 +6,17 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:36:07 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 11:43:18 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/19 14:19:48 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
+
+/*
+** ft_rooms_func: Is the array is 3 items long,
+** this prints the room name to screen, and ensures the remaining to value are
+** only digits, as these are the coordinates.
+*/
 
 void		ft_rooms_func(char **arr)
 {
@@ -18,10 +24,10 @@ void		ft_rooms_func(char **arr)
 	static int	room;
 	int			j;
 
-	room = 1;
+	//room = 1;
 	i = 0;
 	ft_putstr("Room ");
-	ft_putnbr(room++);
+	ft_putnbr(++room);
 	ft_putstr(" name = ");
 	ft_putendl(arr[i]);
 	i++;
