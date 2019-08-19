@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reader.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 10:55:29 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/19 17:37:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,19 @@ int			ft_ants(char **line)
 	long long ants;
 
 	ants = 0;
-	while (*line)
+	/*while (*line)
 	{
 		if (!ft_isdigit(**line))
 		{
 			free(line);
 			ft_error();
 		}
-	}
+	}*/
 	get_next_line(0, line);
+	//ft_putendl(*line);
 	ants = ft_atoll(*line);
+	//ft_putnbr(ants);
+	//ft_putendl("");
 	if (ants < 1 || ants > 2147483647)
 		ft_error();
 	return (ants);

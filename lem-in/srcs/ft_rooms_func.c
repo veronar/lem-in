@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rooms_func.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:36:07 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 14:19:48 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/19 17:47:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void		ft_rooms_func(char **arr)
 	static int	room;
 	int			j;
 
-	//room = 1;
 	i = 0;
 	ft_putstr("Room ");
 	ft_putnbr(++room);
@@ -45,4 +44,8 @@ void		ft_rooms_func(char **arr)
 		}
 		i++;
 	}
+	ft_putstr("     Coordinates: ");
+	ft_putstr(arr[1]);
+	ft_putstr(" ");
+	ft_putendl(arr[2]);
 }
