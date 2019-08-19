@@ -6,17 +6,26 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 11:11:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 07:55:44 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/19 11:23:29 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
 
+/*
+** ft_error: error on standard error
+*/
+
 void		ft_error(void)
 {
-	ft_putendl_fd("Error", 2);
+	ft_putendl_fd("ERROR", 2);
+	//sleep(60);
 	exit(1);
 }
+
+/*
+** ft_usage: if incorrect usage of lem-in results.
+*/
 
 void		ft_usage(void)
 {

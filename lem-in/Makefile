@@ -6,7 +6,7 @@
 #    By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 13:33:16 by vesingh           #+#    #+#              #
-#    Updated: 2019/08/16 11:14:34 by vesingh          ###   ########.fr        #
+#    Updated: 2019/08/19 11:35:29 by vesingh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ LEM_FUNC =	lem-in.c\
 			ft_reader.c\
 			ft_do_line.c\
 			ft_error.c\
+			ft_check_split.c\
+			ft_link_func.c\
+			ft_rooms_func.c\
 
 LEM_FILES = $(addprefix $(L_DIR), $(LEM_FUNC))
 

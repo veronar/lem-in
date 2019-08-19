@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lemin.h                                            :+:      :+:    :+:   */
+/*   ft_link_func.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 11:46:31 by vesingh          ###   ########.fr       */
+/*   Created: 2019/08/19 11:33:11 by vesingh           #+#    #+#             */
+/*   Updated: 2019/08/19 11:35:01 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEMIN_H
-# define LEMIN_H
-# include "../libft/libft.h"
-# include <stdio.h>
+#include "lemin.h"
 
-void		ft_reader();
-int			ft_do_line(char *str, int *start, int *end);
-void		ft_error(void);
-void		ft_usage(void);
-int			ft_check_split(char *str);
-void		ft_free_her(char **arr);
-void		ft_link_func(char *str);
-void		ft_rooms_func(char **arr);
-
-void		ft_comment(char **str);
-
-#endif
+void	ft_link_func(char *str)
+{
+	if (str[0] == 'L')
+		ft_error();
+	else if (ft_strchr(str, '-'))
+		ft_putendl("LINK");
+}

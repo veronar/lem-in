@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lemin.h                                            :+:      :+:    :+:   */
+/*   ft_rooms_func.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 11:46:31 by vesingh          ###   ########.fr       */
+/*   Created: 2019/08/19 11:36:07 by vesingh           #+#    #+#             */
+/*   Updated: 2019/08/19 11:43:18 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEMIN_H
-# define LEMIN_H
-# include "../libft/libft.h"
-# include <stdio.h>
+#include "lemin.h"
 
-void		ft_reader();
-int			ft_do_line(char *str, int *start, int *end);
-void		ft_error(void);
-void		ft_usage(void);
-int			ft_check_split(char *str);
-void		ft_free_her(char **arr);
-void		ft_link_func(char *str);
-void		ft_rooms_func(char **arr);
+void		ft_rooms_func(char **arr)
+{
+	int			i;
+	static int	room;
+	int			j;
 
-void		ft_comment(char **str);
-
-#endif
+	room = 1;
+	i = 0;
+	ft_putstr("Room ");
+	ft_putnbr(room++);
+	ft_putstr(" name = ");
+	ft_putendl(arr[i]);
+	i++;
+	while (arr[i] != NULL)
+	{
+		j = 0;
+		while (arr[i][j] != '\0')
+		{
+			if (!ft_isdigit(arr[i][j]))
+			{
+				ft_free_her(arr);
+				ft_error();
+			}
+			j++;
+		}
+		i++;
+	}
+}
