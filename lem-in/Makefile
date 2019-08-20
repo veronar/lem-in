@@ -6,7 +6,7 @@
 #    By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 13:33:16 by vesingh           #+#    #+#              #
-#    Updated: 2019/08/19 11:35:29 by vesingh          ###   ########.fr        #
+#    Updated: 2019/08/20 13:04:01 by vesingh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBRARY = $(addprefix $(LIBRARY_DIR), $(LIBRARY_NAME))
 
 FLAGS = -Wall -Werror -Wextra
 
-LEM_FUNC =	lem-in.c\
+LEM_FUNC =	lemin.c\
 			ft_reader.c\
 			ft_do_line.c\
 			ft_error.c\
