@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/20 09:06:27 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/20 13:18:28 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,19 @@
 ** no 0 or negatives allowed.
 */
 
-int			ft_ants(char **line)
+int			ft_ants(void)
 {
-	long long ants;
+	long long	ants;
+	char		*line;
 
+	line = NULL;
 	ants = 0;
-	get_next_line(0, line);
-	ants = ft_atoll(*line);
+	get_next_line(0, &line);
+	ants = ft_atoll(line);
+	ft_memdel((void**)&line);
 	if (ants < 1 || ants > 2147483647)
 		ft_error();
+	printf("no. of ants: %lli\n", ants);
 	return (ants);
 }
 
@@ -38,19 +42,16 @@ int			ft_ants(char **line)
 ** as it reads it does ft_do_line to analyse input given.
 */
 
-void		ft_reader(void)
+void		ft_reader(t_room **head_room)
 {
 	char	*line;
-	int		ants;
 	int		start;
 	int		end;
 
+	(void)head_room;
 	line = NULL;
 	end = 0;
 	start = 0;
-	ants = ft_ants(&line);
-	ft_memdel((void**)&line);
-	printf("no. of ants: %i\n", ants);
 	while (get_next_line(0, &line))
 	{
 		printf("line = %s\n", line);
