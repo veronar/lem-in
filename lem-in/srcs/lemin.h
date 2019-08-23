@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 11:12:16 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 11:22:17 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ typedef struct		s_link
 {
 	int				start;
 	char			*name;
-	//int				y;
-	//int				x;
+	int				y;
+	int				x;
 	struct s_link	*next;
 	struct s_link	*prev;
 }					t_link;
