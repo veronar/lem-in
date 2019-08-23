@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_link_func.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:33:11 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 17:49:48 by marvin           ###   ########.fr       */
+/*   Updated: 2019/08/23 10:17:02 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	ft_link_func(char *str)
 	if (str[0] == 'L')
 		ft_error();
 	else if (ft_strchr(str, '-'))
+	{
+		ft_link
 		ft_putendl("LINK");
+	}
 	else
 		ft_error();
 }

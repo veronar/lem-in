@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:04:33 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 09:08:33 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 09:58:37 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int		main(int ac, char **av)
 	t_room	*head_room;
 
 	(void)av;
-	head_room = NULL;
-	ants = ft_ants();
 	if (ac > 1)
 		ft_usage();
+	head_room = NULL;
+	ants = ft_ants();
 	//printf("ac = %i\n", ac);
 	ft_reader(&head_room);
 	ft_printlist(&head_room);
