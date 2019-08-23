@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:36:07 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 12:48:28 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 13:35:23 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int			ft_check_coords(char **arr)
 ** read information.
 */
 
-int		ft_rooms_func(t_room **head_room, char **arr, int *start, int *end)
+int			ft_rooms_func(t_room **head_room, char **arr, int *start, int *end)
 {
 	t_room		*current;
 
@@ -107,3 +107,10 @@ int		ft_rooms_func(t_room **head_room, char **arr, int *start, int *end)
 	ft_free_her(arr);
 	return (1);
 }
+
+
+/*
+int			ft_checkrooms(t_room **head)
+{
+	
+}*/

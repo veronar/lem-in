@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 08:51:03 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 08:25:17 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 13:10:51 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ char			**ft_strsplit(const char *s, char c)
 			k = i;
 			while (s[i] != c && s[i] != '\0')
 				i++;
-			ret[x] = ft_strsub(s, k, (i - k));
-			x++;
+			ret[x++] = ft_strsub(s, k, (i - k));
 		}
 	}
 	ret[x] = NULL;
