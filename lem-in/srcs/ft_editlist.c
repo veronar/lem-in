@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 07:36:48 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 09:27:28 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 11:04:58 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ t_room		*ft_newnode(void)
 
 	head = (t_room*)malloc(sizeof(t_room));
 	head->links = NULL;
+	head->next = NULL;
+	head->prev = NULL;
+	return (head);
+}
+
+t_link		*ft_newlink(void)
+{
+	t_link	*head;
+
+	head = (t_link*)malloc(sizeof(t_link));
 	head->next = NULL;
 	head->prev = NULL;
 	return (head);
@@ -44,7 +54,28 @@ t_room		*ft_listadd(t_room **head_room)
 	return (current);
 }
 
-void		ft_lst_del(t_room **head)
+t_link		*ft_linkadd(t_link **head_link)
+{
+	t_link	*current;
+
+	if (*head_link == NULL)
+	{
+		*head_link = ft_newlink();
+		current = *head_link;
+	}
+	else
+	{
+		current = *head_link;
+		while (current->next != NULL)
+			current = current->next;
+		current->next = ft_newlink();
+		current->next->prev = current;
+		current = current->next;
+	}
+	return (current);
+}
+
+void		ft_list_del(t_room **head)
 {
 	t_room	*current;
 	t_room	*second;

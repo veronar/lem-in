@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 09:07:36 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 10:09:15 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 11:16:01 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,32 @@ void		ft_printlist(t_room **head)
 		ft_putchar('\n');
 		current = current->next;
 		ft_putchar('\n');
+	}
+	ft_putchar('\n');
+}
+
+void		ft_printlinks(t_room **head)
+{
+	t_room	*current;
+	t_link	*clink;
+
+	current = *head;
+	ft_putendl("\n\n");
+	while (current != NULL)
+	{
+		ft_putstr("--------");
+		ft_putstr(current->name);
+		ft_putendl("--------");
+		clink = current->links;
+		ft_putendl("");
+		while (clink != NULL)
+		{
+			ft_putstr("Link: ");
+			ft_putendl(clink->name);
+			clink = clink->next;
+		}
+		ft_putstr("\n");
+		current = current->next;
 	}
 	ft_putchar('\n');
 }

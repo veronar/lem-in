@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 10:15:05 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 11:12:16 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,20 @@ void				ft_usage(void);
 int					ft_check_split(t_room **head_room, char *str,\
 					int *start, int *end);
 void				ft_free_her(char **arr);
-void				ft_link_func(char *str);
+void				ft_link_func(t_room **head_room, char *str);
 int					ft_rooms_func(t_room **head_room, char **arr,\
 					int *start, int *end);
 int					ft_check_coords(char **arr);
 void				ft_command(t_room **current, int *start, int *end);
 t_room				*ft_newnode(void);
 t_room				*ft_listadd(t_room **head_room);
-void				ft_lst_del(t_room **head);
+void				ft_list_del(t_room **head);
+t_link				*ft_newlink(void);
+t_link				*ft_linkadd(t_link **head_link);
 
 
 void				ft_comment(char **str);
 void				ft_printlist(t_room **head);
+void				ft_printlinks(t_room **head);
 
 #endif
