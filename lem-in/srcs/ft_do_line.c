@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:35:04 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 10:51:14 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 08:57:24 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 ** 4. checks correct input of room names with ft_check_split.
 */
 
-int		ft_do_line(char *str, int *start, int *end)
+int		ft_do_line(t_room **head_room, char *str, int *start, int *end)
 {
 	if (str[0] == '\0')
 		return (-1);
@@ -45,7 +45,7 @@ int		ft_do_line(char *str, int *start, int *end)
 		ft_putendl("Comment: IGNORE");
 		return (0);
 	}
-	else if (!ft_check_split(str))
+	else if (!ft_check_split(head_room, str, start, end))
 	{
 		ft_error();
 		return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vesingh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 08:51:03 by vesingh           #+#    #+#             */
-/*   Updated: 2019/05/31 11:19:45 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 08:25:17 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ char			**ft_strsplit(const char *s, char c)
 			x++;
 		}
 	}
+	ret[x] = NULL;
 	return (ret);
 }

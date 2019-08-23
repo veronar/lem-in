@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/20 13:14:07 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 09:08:15 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ typedef struct		s_link
 {
 	int				start;
 	char			*name;
-	int				coord_y;
-	int				coord_x;
+	int				y;
+	int				x;
 	struct s_link	*next;
 	struct s_link	*prev;
 }					t_link;
@@ -28,8 +28,8 @@ typedef struct		s_room
 {
 	int				start;
 	char			*name;
-	int				coord_y;
-	int				coord_x;
+	int				y;
+	int				x;
 	struct s_link	*links;
 	struct s_room	*next;
 	struct s_room	*prev;
@@ -37,14 +37,22 @@ typedef struct		s_room
 
 void				ft_reader(t_room **head_room);
 int					ft_ants(void);
-int					ft_do_line(char *str, int *start, int *end);
+int					ft_do_line(t_room **head_room, char *str, int *start,\
+					int *end);
 void				ft_error(void);
 void				ft_usage(void);
-int					ft_check_split(char *str);
+int					ft_check_split(t_room **head_room, char *str, int *start, int *end);
 void				ft_free_her(char **arr);
 void				ft_link_func(char *str);
-void				ft_rooms_func(char **arr);
+int				ft_rooms_func(t_room **head_room, char **arr, int *start, int *end);
+int			ft_check_coords(char **arr);
+void		ft_command(t_room **current, int *start, int *end);
+t_room		*ft_newnode(void);
+t_room		*ft_listadd(t_room **head_room);
+void		ft_lst_del(t_room **head);
+
 
 void				ft_comment(char **str);
+void		ft_printlist(t_room **head);
 
 #endif

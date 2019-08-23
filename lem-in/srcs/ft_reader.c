@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/20 13:18:28 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 09:21:48 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ void		ft_reader(t_room **head_room)
 	start = 0;
 	while (get_next_line(0, &line))
 	{
-		printf("line = %s\n", line);
-		if (ft_do_line(line, &start, &end) == -1)
+		//printf("line = %s\n", line);
+		if (ft_do_line(head_room, line, &start, &end) == -1)
 			ft_error();
 		ft_memdel((void **)&line);
 	}
 	ft_memdel((void**)&line);
-	if (start != 1 || end != 1)
+	if (start != -1 || end != -1)
 		ft_error();
 }

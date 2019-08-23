@@ -3,14 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rooms_func.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:36:07 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 17:47:35 by marvin           ###   ########.fr       */
+/*   Updated: 2019/08/23 09:34:22 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
+
+void		ft_command(t_room **current, int *start, int *end)
+{
+	if (*start == 1)
+	{
+		(*current)->start = 1;
+		*start = -1;
+	}
+	else if (*end == 1)
+	{
+		(*current)->start = -1;
+		*end = -1;
+	}
+	else 
+		(*current)->start = 0;
+}
+
+int			ft_check_coords(char **arr)
+{
+	long long	y;
+	long long	x;
+	int			i;
+	int			j;
+
+	i = 1;
+	while (arr[i] != NULL)
+	{
+		j = 0;
+		while (arr[i][j] != '\0')
+		{
+			if (!ft_isdigit(arr[i][j]))
+				return (-1);
+			j++;
+		}
+		i++;
+	}
+	x = ft_atoll(arr[1]);
+	y = ft_atoll(arr[2]);
+	if ((x < 0 || x > 2147483647) || (y < 0 || y > 2147483647))
+	{
+		return (-1);
+	}
+	return (1);
+}
 
 /*
 ** ft_rooms_func: Is the array is 3 items long,
@@ -18,34 +62,30 @@
 ** only digits, as these are the coordinates.
 */
 
-void		ft_rooms_func(char **arr)
+int		ft_rooms_func(t_room **head_room, char **arr, int *start, int *end)
 {
-	int			i;
-	static int	room;
-	int			j;
+	t_room		*current;
 
-	i = 0;
-	ft_putstr("Room ");
-	ft_putnbr(++room);
-	ft_putstr(" name = ");
-	ft_putendl(arr[i]);
-	i++;
-	while (arr[i] != NULL)
+	current = ft_listadd(head_room);
+	if (*start == 1 || *end == 1)
+		ft_command(&current, start, end);
+	if (!ft_check_coords(arr))
 	{
-		j = 0;
-		while (arr[i][j] != '\0')
-		{
-			if (!ft_isdigit(arr[i][j]))
-			{
-				ft_free_her(arr);
-				ft_error();
-			}
-			j++;
-		}
-		i++;
+		ft_free_her(arr);
+		ft_lst_del(head_room);
+		return (-1);
 	}
-	ft_putstr("     Coordinates: ");
-	ft_putstr(arr[1]);
-	ft_putstr(" ");
-	ft_putendl(arr[2]);
+	current->name = ft_strdup(arr[0]);
+	current->x = ft_atoi(arr[1]);
+	current->y = ft_atoi(arr[2]);
+	current->next = NULL;
+	current->links = NULL;
+	// ft_putstr("Room name = ");
+	// ft_putendl(current->name);
+	// ft_putstr("     Coordinates: ");
+	// ft_putnbr(current->x);
+	// ft_putstr(" ");
+	// ft_putnbr(current->y);
+	// ft_putchar('\n');
+	return (1);
 }

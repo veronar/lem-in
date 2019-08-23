@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lemin.c                                            :+:      :+:    :+:   */
+/*   ft_test.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 08:04:33 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 09:08:33 by vesingh          ###   ########.fr       */
+/*   Created: 2019/08/23 09:07:36 by vesingh           #+#    #+#             */
+/*   Updated: 2019/08/23 09:11:45 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
 
-int		main(int ac, char **av)
+void		ft_printlist(t_room **head)
 {
-	int		ants;
-	t_room	*head_room;
+	t_room	*start;
 
-	(void)av;
-	head_room = NULL;
-	ants = ft_ants();
-	if (ac > 1)
-		ft_usage();
-	//printf("ac = %i\n", ac);
-	ft_reader(&head_room);
-	ft_printlist(&head_room);
-	//sleep(60);
-	return (0);
+	start = *head;
+	while (start != NULL)
+	{
+		ft_putstr("Room name = ");
+		ft_putendl(start->name);
+		ft_putstr("     Coordinates: ");
+		ft_putnbr(start->x);
+		ft_putstr(" ");
+		ft_putnbr(start->y);
+		ft_putchar('\n');
+		start = start->next;
+	}
+	ft_putchar('\n');
 }

@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 09:46:32 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/19 14:16:50 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 09:06:11 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_free_her(char **arr)
 ** if there is one its a link;
 */
 
-int		ft_check_split(char *str)
+int		ft_check_split(t_room **head_room, char *str, int *start, int *end)
 {
 	char	**arr;
 	int		a_size;
@@ -51,15 +51,15 @@ int		ft_check_split(char *str)
 		ft_free_her(arr);
 		return (0);
 	}
+	else if (a_size == 3)
+	{
+		if (ft_rooms_func(head_room, arr, start, end) == -1)
+			return (0);
+	}
 	else if (a_size == 1)
 	{
 		ft_free_her(arr);
 		ft_link_func(str);
-	}
-	else if (a_size == 3)
-	{
-		ft_rooms_func(arr);
-		ft_free_her(arr);
 	}
 	return (1);
 }
