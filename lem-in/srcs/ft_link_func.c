@@ -6,16 +6,22 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:33:11 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 11:24:57 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 12:54:39 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
 
+/*
+** ft_linkinfo: the link should have the same info of the actual room node in
+** the 'parent' list. We use this function to find the matching parent node
+** and copy the relevant information in to reflect identical data.
+*/
+
 void	ft_linkinfo(t_room **head, t_link **clink)
 {
 	t_room	*current;
-	
+
 	current = *head;
 	while (ft_strcmp(current->name, (*clink)->name) != 0)
 		current = current->next;
@@ -24,6 +30,16 @@ void	ft_linkinfo(t_room **head, t_link **clink)
 	(*clink)->y = current->y;
 	(*clink)->next = NULL;
 }
+
+/*
+** ft_splitlinks: takes the link string, seperates it into the rooms being
+** linked, the first name is the source link, second is the destination.
+** is there is more than 2 strings after the split return -1 to free & error.
+** Find the relevant room node, ie the source link room, then populate its
+** t_link links pointer (which will start as NULL);
+** Thereafter add the rest of the info with ft_linkinfo
+** Lastly free the memory used for the stringsplit at the start of function.
+*/
 
 int		ft_splitlinks(t_room **head, char *str)
 {
@@ -49,6 +65,7 @@ int		ft_splitlinks(t_room **head, char *str)
 ** ft_link_func: if there is only one argument given.
 ** check if the first letter is 'L' it is invalid
 ** if there is a '-' in the string that means it in a LINK
+** use ft_splitlinks to split & store the links.
 */
 
 void	ft_link_func(t_room **head_room, char *str)

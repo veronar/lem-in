@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:35:04 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 08:57:24 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 12:26:20 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 **
 ** 3. checks for comment lines starts with "#" and basically ignores them
 **
-** 4. checks correct input of room names with ft_check_split.
+** 4. checks correct input of room names or links with ft_check_split.
 */
 
 int		ft_do_line(t_room **head_room, char *str, int *start, int *end)

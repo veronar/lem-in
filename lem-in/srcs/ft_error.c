@@ -6,11 +6,44 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 11:11:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/20 13:17:24 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 13:02:12 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
+
+/*
+** NOT TESTED
+** ft_freelists: iterates through 'parent' list, then iterates through
+** subsequent list, frees all elements in the sub list, then frees the
+** parent node;
+*/
+
+void		ft_freelists(t_room **head)
+{
+	t_room	*current;
+	t_room	*second;
+	t_link	*clink;
+	t_link	*clink2;
+
+	if (*head == NULL)
+		return ;
+	current = *head;
+	while (current != NULL)
+	{
+		clink = current->links;
+		while (clink != NULL)
+		{
+			clink2 = clink->next;
+			free(clink);
+			clink = clink2;
+		}
+		second = current->next;
+		free(current);
+		current = second;
+	}
+	*head = NULL;
+}
 
 /*
 ** ft_error: error on standard error

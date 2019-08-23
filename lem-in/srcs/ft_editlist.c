@@ -6,11 +6,15 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 07:36:48 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 11:04:58 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 13:07:01 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
+
+/*
+** ft_newnode: mallocs for a new t_room struct type; returns node malloced for.
+*/
 
 t_room		*ft_newnode(void)
 {
@@ -23,6 +27,10 @@ t_room		*ft_newnode(void)
 	return (head);
 }
 
+/*
+** ft_newlink: mallocs for new t_link struct; returns node malloced for.
+*/
+
 t_link		*ft_newlink(void)
 {
 	t_link	*head;
@@ -32,6 +40,13 @@ t_link		*ft_newlink(void)
 	head->prev = NULL;
 	return (head);
 }
+
+/*
+** ft_listadd: takes pointer of head node (t_room). If its empty, creates
+** ft_newnode for it & returns node.
+** If its not NULL, it iterates to the last node, ft_newnode for a new next node
+** in said list & returns this node.
+*/
 
 t_room		*ft_listadd(t_room **head_room)
 {
@@ -54,6 +69,13 @@ t_room		*ft_listadd(t_room **head_room)
 	return (current);
 }
 
+/*
+** ft_linkadd: takes pointer of head node (t_link). If its empty, creates
+** ft_newnode for it & returns node.
+** If its not NULL, it iterates to the last node, ft_newnode for a new next node
+** in said list & returns this node.
+*/
+
 t_link		*ft_linkadd(t_link **head_link)
 {
 	t_link	*current;
@@ -74,6 +96,10 @@ t_link		*ft_linkadd(t_link **head_link)
 	}
 	return (current);
 }
+
+/*
+** frees all nodes in a list of type t_room.
+*/
 
 void		ft_list_del(t_room **head)
 {

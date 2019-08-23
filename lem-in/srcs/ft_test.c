@@ -6,11 +6,17 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 09:07:36 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 11:23:59 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 12:58:42 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
+
+/*
+** ft_printlist: iterates through 'parent' list, printing room names
+** and their coordinates.
+** shows heading START & END for significant rooms.
+*/
 
 void		ft_printlist(t_room **head)
 {
@@ -42,6 +48,11 @@ void		ft_printlist(t_room **head)
 	}
 	ft_putchar('\n');
 }
+
+/*
+** ft_printlinks: iterates through 'parent' list, for each list, prints out
+** its subsequent links.
+*/
 
 void		ft_printlinks(t_room **head)
 {

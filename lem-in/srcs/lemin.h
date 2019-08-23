@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 11:22:17 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 12:22:00 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ t_room				*ft_listadd(t_room **head_room);
 void				ft_list_del(t_room **head);
 t_link				*ft_newlink(void);
 t_link				*ft_linkadd(t_link **head_link);
-
+void				ft_linkinfo(t_room **head, t_link **clink);
+void				ft_freelists(t_room **head);
 
 void				ft_comment(char **str);
 void				ft_printlist(t_room **head);

@@ -6,14 +6,14 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 09:46:32 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 10:46:28 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/23 12:55:20 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
 
 /*
-** ft_free_her: name by fremoor, mimeyer & nreddy.
+** ft_free_her: courtesy of fremoor, mimeyer & nreddy.
 ** frees all elements in an a pointer array.
 ** then frees itself.
 */
