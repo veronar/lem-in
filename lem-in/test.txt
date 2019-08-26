@@ -1,6 +1,4 @@
-#comment first
-#comment
-1
+43
 #comment first
 #comment
 #that was the start

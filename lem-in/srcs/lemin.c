@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:04:33 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/26 14:49:22 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/26 15:29:24 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		main(int ac, char **av)
 
 	(void)av;
 	if (ac > 1)
-		ft_usage();
+		ft_error();
 	head_room = NULL;
 	ants = ft_ants();
 	ft_reader(&head_room);

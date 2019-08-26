@@ -6,11 +6,27 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/26 14:08:43 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/26 15:32:45 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
+
+/*
+** ft_check_ants: checks that only digits are given as argument for number of
+** ants
+*/
+
+void		ft_check_ants(char *line)
+{
+	size_t	len;
+
+	len = 0;
+	while (line[len] && ft_isdigit(line[len]))
+		len++;
+	if (strlen(line) != len)
+		ft_error();
+}
 
 /*
 ** ft_ants: checks the first line to be read, if it not digits only, return
@@ -34,11 +50,7 @@ int			ft_ants(void)
 		ft_memdel((void **)&line);
 		get_next_line(0, &line);
 	}
-	size_t i = 0;
-	while (line[i] && ft_isdigit(line[i]))
-		i++;
-	if (ft_strlen(line) != i)
-		ft_error();
+	ft_check_ants(line);
 	ants = ft_atoll(line);
 	ft_memdel((void**)&line);
 	if (ants < 1 || ants > 2147483647)

@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 09:46:32 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/26 14:37:48 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/26 15:32:23 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	ft_free_her(char **arr)
 
 int		ft_check_split(t_room **head_room, char *str, int *start, int *end)
 {
-	char	**arr;
-	int		a_size;
-	static int link = 0;
+	char		**arr;
+	int			a_size;
+	static int	link = 0;
 
 	arr = ft_strsplit(str, ' ');
 	a_size = 0;

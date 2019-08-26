@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 12:22:00 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/26 15:26:37 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 typedef struct		s_link
 {
+	//struct s_room	room;
 	int				start;
 	char			*name;
 	int				y;
@@ -60,5 +61,6 @@ void				ft_freelists(t_room **head);
 void				ft_comment(char **str);
 void				ft_printlist(t_room **head);
 void				ft_printlinks(t_room **head);
+void				ft_check_ants(char *line);
 
 #endif

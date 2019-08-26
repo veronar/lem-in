@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:35:04 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/26 14:47:06 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/26 15:31:55 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 
 int		ft_do_line(t_room **head_room, char *str, int *start, int *end)
 {
-	static int command_active = 0;
-	int c;
+	static int	command_active = 0;
+	int			check;
 
 	if (str[0] == '\0')
 		return (-1);
@@ -43,18 +43,14 @@ int		ft_do_line(t_room **head_room, char *str, int *start, int *end)
 		if (ft_strcmp(str, "##end") == 0)
 			*end = *end + 1;
 		command_active = 1;
-		ft_putendl("The next line is a command");
 		return (1);
 	}
 	else if (str[0] == '#' && str[1] != '#')
-	{
-		ft_putendl("Comment: IGNORE");
 		return (1);
-	}
 	else
 	{
-		c = ft_check_split(head_room, str, start, end);
+		check = ft_check_split(head_room, str, start, end);
 		command_active = 0;
-		return (c);
+		return (check);
 	}
 }
