@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:33:11 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 12:54:39 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/26 14:25:54 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ int		ft_splitlinks(t_room **head, char *str)
 	link = ft_strsplit(str, '-');
 	if (link[2] != NULL)
 		return (-1);
-	while (ft_strcmp(link[0], current->name) != 0)
+	while (current != NULL && ft_strcmp(link[0], current->name) != 0)
 		current = current->next;
+	if (current == NULL)
+		return (-1);
 	clink = current->links;
 	clink = ft_linkadd(&current->links);
 	clink->name = ft_strdup(link[1]);

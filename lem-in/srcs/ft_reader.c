@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/26 13:00:22 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/26 14:08:43 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ int			ft_ants(void)
 		ft_memdel((void **)&line);
 		get_next_line(0, &line);
 	}
+	size_t i = 0;
+	while (line[i] && ft_isdigit(line[i]))
+		i++;
+	if (ft_strlen(line) != i)
+		ft_error();
 	ants = ft_atoll(line);
 	ft_memdel((void**)&line);
 	if (ants < 1 || ants > 2147483647)
@@ -55,7 +60,6 @@ void		ft_reader(t_room **head_room)
 	int		start;
 	int		end;
 
-	(void)head_room;
 	line = NULL;
 	end = 0;
 	start = 0;

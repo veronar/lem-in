@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:36:07 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 13:35:23 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/26 13:17:59 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,6 @@ int			ft_rooms_func(t_room **head_room, char **arr, int *start, int *end)
 /*
 int			ft_checkrooms(t_room **head)
 {
-	
-}*/
+
+}
+*/
