@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 12:32:22 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/26 12:55:38 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ int			ft_ants(void)
 	line = NULL;
 	ants = 0;
 	get_next_line(0, &line);
+	if (line[0] == '#' && line[1] != '#')
+	{
+		ft_memdel((void **)&line);
+		get_next_line(0, &line);
+	}
 	ants = ft_atoll(line);
 	ft_memdel((void**)&line);
 	if (ants < 1 || ants > 2147483647)
