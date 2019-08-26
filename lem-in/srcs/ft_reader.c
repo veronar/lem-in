@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/26 12:55:38 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/26 13:00:22 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 ** error. If it is only digits, convert it to a long long, and then check
 ** that it is within INT range.
 ** no 0 or negatives allowed.
+** If there is a comment before the number of ants, it skips them and performs
+** the read again on the next line.
 */
 
 int			ft_ants(void)
@@ -27,7 +29,7 @@ int			ft_ants(void)
 	line = NULL;
 	ants = 0;
 	get_next_line(0, &line);
-	if (line[0] == '#' && line[1] != '#')
+	while (line[0] == '#' && line[1] != '#')
 	{
 		ft_memdel((void **)&line);
 		get_next_line(0, &line);
