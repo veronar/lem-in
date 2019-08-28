@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/27 13:44:25 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/28 13:56:40 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,9 @@ void		ft_reader(t_room **head_room)
 	ft_memdel((void**)&line);
 	if (start != -1 || end != -1)
 		ft_error();
+	if (ft_checkdups(head_room) == -1)
+	{
+		ft_freelists(head_room);
+		ft_error();
+	}
 }

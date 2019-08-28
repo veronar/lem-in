@@ -6,6 +6,7 @@
 start 5 7
 pasta 8 9
 pizza 6 7
+end 5 7
 ##end
 end 95 520016
 start-pizza

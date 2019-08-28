@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 11:11:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/26 15:30:50 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/28 14:03:21 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ void		ft_usage(void)
 }
 
 /*
-** NOT TESTED
 ** ft_freelists: iterates through 'parent' list, then iterates through
 ** subsequent list, frees all elements in the sub list, then frees the
 ** parent node;
+** NB frees the names of the list, those were malloced for seperately than
+** the actual node. if the name is not freed it will be a leak.
 */
 
 void		ft_freelists(t_room **head)
@@ -56,10 +57,12 @@ void		ft_freelists(t_room **head)
 		while (clink != NULL)
 		{
 			clink2 = clink->next;
+			free(clink->name);
 			free(clink);
 			clink = clink2;
 		}
 		second = current->next;
+		free(current->name);
 		free(current);
 		current = second;
 	}
