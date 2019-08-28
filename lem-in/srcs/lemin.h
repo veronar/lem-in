@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/28 14:14:24 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/28 14:17:27 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 typedef struct		s_link
 {
-	//struct s_room	room;
 	int				start;
 	char			*name;
 	int				y;
