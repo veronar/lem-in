@@ -6,9 +6,11 @@
 start 5 7
 pasta 8 9
 pizza 6 7
-end 5 7
+noend 5 1
+
 ##end
-end 95 520016
+send 95 520016
+end 5 4
 start-pizza
 pizza-pasta
 pasta-end
