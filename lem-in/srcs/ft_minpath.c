@@ -6,46 +6,56 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 10:49:50 by anorman           #+#    #+#             */
-/*   Updated: 2019/08/30 11:46:09 by anorman          ###   ########.fr       */
+/*   Updated: 2019/08/30 12:17:26 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
 
-static t_room 	**st_unchecked(t_room *rooms)
+static void		st_put_linklen(t_room *node, int len)
 {
-	t_room	**list;
-	int		len;
-	int		i;
+	t_room **temp;
 
-	len = ft_lstlen(*rooms);
-	list = (t_room **)malloc(sizeof(t_room *) * len + 1);
-	list[len] = NULL;
-	i = 0;
-	while (room)
+	temp = node->links;
+	if (temp)
 	{
-		list[i] = room;
-		room = room->next;
+		while (*temp)
+		{
+			(*temp)->len = len + 1;
+			(*temp)->prev = node;
+			temp++;
+		}
 	}
-	return (list);
 }
 
 /*
-** Returns an array containing all the rooms to help with dijkstras use.
+** Fills in all the (*links)->len and (*links)->prev
 */
 
-char			*ft_minpath(t_room *rooms)
+char			**ft_path(t_room *room)
 {
-	t_room	**list;
-	t_room	**temp;
+	
+	return (res);
+}
+
+char			**ft_minpath(t_room *rooms)
+{
+	t_room	*temp;
 	int		len;
 
-	list = st_unchecked(rooms);
-	temp = list;
+	temp = rooms;
 	len = 0;
-	while (temp->start != -1 && temp->len != -1) //end when we have a len to the end;
+	while (temp->start != -1 && temp->len != -1) //end when we have a len in end;
 	{
-
+		while (temp->len != len) //find shortest current
+			temp = temp->next;
+		st_put_linklen(temp, len); //fill in linked nodes
+		if (!temp && ++len) //reset to beginning 
+			temp = rooms;
 	}
 	return (ft_path(*temp));
 }
+
+/*
+** Finds the minpath, will inf loop if exit cant connect to start (for now)
+*/
