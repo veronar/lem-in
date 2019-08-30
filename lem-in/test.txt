@@ -1,21 +1,15 @@
 43
-#comment first
-#comment
-#that was the start
 ##start
-start 5 7
-pasta 8 9
-pizza 6 7
-noend 5 1
-
+one 5 9
+two 6 4
+three 4 9
 ##end
-send 95 520016
-end 5 4
-start-pizza
-pizza-pasta
-pasta-end
-pizza-end
-pizza-start
-end-pizza
-end-pasta
-pasta-pizza
+four 9 4
+five 9 3
+#links
+one-two
+three-five
+two-four
+five-one
+five-two
+five-four

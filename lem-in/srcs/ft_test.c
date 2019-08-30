@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 09:07:36 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 13:15:24 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/30 11:16:11 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ void		ft_printlist(t_room **head)
 void		ft_printlinks(t_room **head)
 {
 	t_room	*current;
-	t_link	*clink;
+	t_room	**point;
+	int		i;
 
 	current = *head;
 	ft_putendl("\n\n");
@@ -66,18 +67,19 @@ void		ft_printlinks(t_room **head)
 		ft_putstr("--------");
 		ft_putstr(current->name);
 		ft_putendl("--------");
-		clink = current->links;
+		point = current->links;
 		ft_putendl("");
-		while (clink != NULL)
+		i = 0;
+		while (point != NULL && point[i] != NULL)
 		{
 			ft_putstr("Link: ");
-			ft_putstr(clink->name);
+			ft_putendl(point[i]->name);
 			ft_putchar(' ');
-			ft_putnbr(clink->x);
+			ft_putnbr(point[i]->x);
 			ft_putchar(' ');
-			ft_putnbr(clink->y);
+			ft_putnbr(point[i]->y);
 			ft_putendl("");
-			clink = clink->next;
+			i++;
 		}
 		ft_putstr("\n");
 		current = current->next;

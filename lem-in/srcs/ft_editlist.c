@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 07:36:48 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/23 13:07:01 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/30 12:53:17 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,6 @@ t_room		*ft_newnode(void)
 
 	head = (t_room*)malloc(sizeof(t_room));
 	head->links = NULL;
-	head->next = NULL;
-	head->prev = NULL;
-	return (head);
-}
-
-/*
-** ft_newlink: mallocs for new t_link struct; returns node malloced for.
-*/
-
-t_link		*ft_newlink(void)
-{
-	t_link	*head;
-
-	head = (t_link*)malloc(sizeof(t_link));
 	head->next = NULL;
 	head->prev = NULL;
 	return (head);
@@ -63,34 +49,6 @@ t_room		*ft_listadd(t_room **head_room)
 		while (current->next != NULL)
 			current = current->next;
 		current->next = ft_newnode();
-		current->next->prev = current;
-		current = current->next;
-	}
-	return (current);
-}
-
-/*
-** ft_linkadd: takes pointer of head node (t_link). If its empty, creates
-** ft_newnode for it & returns node.
-** If its not NULL, it iterates to the last node, ft_newnode for a new next node
-** in said list & returns this node.
-*/
-
-t_link		*ft_linkadd(t_link **head_link)
-{
-	t_link	*current;
-
-	if (*head_link == NULL)
-	{
-		*head_link = ft_newlink();
-		current = *head_link;
-	}
-	else
-	{
-		current = *head_link;
-		while (current->next != NULL)
-			current = current->next;
-		current->next = ft_newlink();
 		current->next->prev = current;
 		current = current->next;
 	}

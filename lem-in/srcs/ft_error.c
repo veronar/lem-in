@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 11:11:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/28 14:16:50 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/30 11:17:26 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,24 @@ void		ft_error(void)
 }
 
 /*
-** ft_usage: if incorrect usage of lem-in results.
+** ft_free_linkarr: adaption of ft_free_her (ft_check_split.c) - for t_room**.
+** frees all elements in an a pointer array.
+** then frees itself.
 */
 
-void		ft_usage(void)
+void	ft_free_linkarr(t_room **arr)
 {
-	ft_putendl("Lem-in: requires no arguments");
-	exit(1);
+	int	i;
+
+	i = 0;
+	if (*arr == NULL)
+		return ;
+	while (arr[i])
+	{
+		ft_memdel((void **)&arr[i]);
+		i++;
+	}
+	free(arr);
 }
 
 /*
@@ -45,22 +56,13 @@ void		ft_freelists(t_room **head)
 {
 	t_room	*current;
 	t_room	*second;
-	t_link	*clink;
-	t_link	*clink2;
 
 	if (*head == NULL)
 		return ;
 	current = *head;
 	while (current != NULL)
 	{
-		clink = current->links;
-		while (clink != NULL)
-		{
-			clink2 = clink->next;
-			free(clink->name);
-			free(clink);
-			clink = clink2;
-		}
+		ft_free_linkarr(current->links);
 		second = current->next;
 		free(current->name);
 		free(current);
