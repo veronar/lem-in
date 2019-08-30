@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:33:11 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/30 12:58:10 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/30 13:25:05 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,12 @@ void	ft_linkinfo(t_room ***temp, t_room ***new, t_room **pointer, int size)
 	i = 0;
 	while (i < size)
 	{
-		*new[i] = *temp[i];
-		ft_putendl((*new[i])->name);
+		(*new)[i] = (*temp)[i];
 		i++;
 	}
-	*new[i] = *pointer;
+	(*new)[i] = *pointer;
 	i++;
-	*new[i] = NULL;
+	(*new)[i] = NULL;
 }
 
 /*
@@ -67,11 +66,9 @@ int		ft_linkarr(t_room **current, t_room **pointer)
 	}
 	while (temp[size] != NULL)
 		size++;
-	printf("size = %i\n", size);
 	if (!(new = (t_room**)malloc(sizeof(t_room*) * (size + 2))))
 		return (-1);
 	ft_linkinfo(&temp, &new, pointer, size);
-	printf("hi\n");
 	free(temp);
 	(*current)->links = new;
 	return (1);
