@@ -6,7 +6,7 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 10:49:50 by anorman           #+#    #+#             */
-/*   Updated: 2019/08/30 12:17:26 by anorman          ###   ########.fr       */
+/*   Updated: 2019/08/30 12:25:38 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,33 @@ static void		st_put_linklen(t_room *node, int len)
 
 char			**ft_path(t_room *room)
 {
-	
-	return (res);
+	char	**path;
+	int		len;	
+	t_room	*temp;
+
+	len = 0;
+	temp = room;
+	while (temp && ++len)
+		temp = temp->prev;
+	if (!(path = (char **)malloc(sizeof(char *) * len + 1)))
+		return (NULL);
+	path[len] = NULL;
+	len = 0;
+	while (room)
+	{
+		path[len++] = room->name;
+		room = room->prev;
+	}
+	return (path);
 }
+
+/*
+** Returns the path like a strsplit of the roomnames.
+**
+** path needs freeing but "dont free the roomnames"
+** (the roomnames are just pointing at whats in each node)
+** (so those can be freed when the rooms are freed)
+*/
 
 char			**ft_minpath(t_room *rooms)
 {
