@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_link_func.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:33:11 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/30 13:25:05 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/30 17:14:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,9 @@ int		ft_linkarr(t_room **current, t_room **pointer)
 	t_room	**temp;
 	t_room	**new;
 	int		size;
-	int		i;
 
 	temp = (*current)->links;
 	size = 0;
-	i = 0;
 	if (temp == NULL)
 	{
 		if (!(temp = (t_room**)malloc(sizeof(t_room*) * 2)))

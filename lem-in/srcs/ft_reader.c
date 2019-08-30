@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reader.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/30 10:59:35 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/08/30 17:16:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int			ft_ants(void)
 	ft_memdel((void**)&line);
 	if (ants < 1 || ants > 2147483647)
 		ft_error();
-	printf("no. of ants: %lli\n", ants);
+//	printf("no. of ants: %lli\n", ants);
 	return (ants);
 }
 
