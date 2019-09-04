@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 14:59:28 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/16 11:34:12 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/09/04 14:49:14 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef	struct		s_list
 void				ft_bzero(void *s, size_t n);
 int					ft_isdigit(int c);
 size_t				ft_strlen(const char *str);
+int					ft_ptrarrlen(void **arr);
 int					ft_isalnum(int c);
 int					ft_isprint(int c);
 int					ft_tolower(int c);
