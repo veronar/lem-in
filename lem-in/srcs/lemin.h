@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/30 12:52:00 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/09/04 14:47:17 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct		s_room
 	char			*name;
 	int				y;
 	int				x;
+	int				len;
 	struct s_room	**links;
 	struct s_room	*next;
 	struct s_room	*prev;
@@ -55,5 +56,8 @@ void				ft_comment(char **str);
 void				ft_printlist(t_room **head);
 void				ft_printlinks(t_room **head);
 void				ft_check_ants(char *line);
+
+char				**ft_minpath(t_room *rooms);
+int					ft_ptrarrlen(void **arr);
 
 #endif

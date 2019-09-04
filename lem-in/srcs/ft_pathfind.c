@@ -6,7 +6,7 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 12:04:31 by anorman           #+#    #+#             */
-/*   Updated: 2019/08/28 15:21:32 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/04 14:46:47 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ int		st_maxpaths(t_room *rooms)
 	while (rooms->start != 1 && rooms->start != -1)
 		rooms = rooms->next; //find start or exit
 	i = 0;
-	while (room->link[i])
+	while (rooms->links[i])
 		i++; //count links
 	num = i; //set
-	room = room->next; //move on
+	rooms = rooms->next; //move on
 	while (rooms->start != 1 && rooms->start != -1)
 		rooms = rooms->next; //find other start/exit
 	i = 0;
-	while (room->link[i])
+	while (rooms->links[i])
 		i++; //count links
 	if (i < num) //we want the smaller one
 		num = i;
@@ -46,17 +46,16 @@ int		st_maxpaths(t_room *rooms)
 ** then using that attempts to find better multipaths.
 */
 
-void	st_findpaths(char ***paths, t_room *rooms, int max, int ants)
+void	st_findpaths(char ***paths, t_room *rooms, int ants)
 {
-	int		i;
 	char	**min;
 	int		moves;
 
 	min = ft_minpath(rooms);
-	moves = ft_strsplitlen(min) + ants;
+	moves = ft_ptrarrlen((void **)min) + ants;
 
-
-
+	paths[0] = min; //for now;
+	paths[1] = NULL;
 }
 
 /*
@@ -68,12 +67,32 @@ char	***ft_pathfind(t_room *rooms, int ants)
 	char	***paths;
 	int		maxpaths;
 
-	maxpaths = st_maxpaths(rooms) //finds max potential paths
+	maxpaths = st_maxpaths(rooms); //finds max potential paths
 	if (!(paths = (char ***)malloc(sizeof(char **) * maxpaths + 1)))
 	{
 		write(2, "Error paths malloc failed\n", 26); 
 		return (NULL);
 	}
-	st_findpaths(paths, rooms, maxpaths, ants);
+	st_findpaths(paths, rooms, ants);
 	return (paths);
 }
+
+void	ft_printpath(char ***paths)
+{
+	int i;
+	int k;
+
+	k = 0;
+	while (paths[k])
+	{
+		i = 0;
+		while (paths[k][i])
+			printf("%s ", paths[k][i++]);
+		printf("\n");
+		k++;
+	}
+}
+
+/*
+** Prints each path on a new line, for testing
+*/

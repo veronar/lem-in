@@ -6,7 +6,7 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 10:49:50 by anorman           #+#    #+#             */
-/*   Updated: 2019/08/30 12:25:38 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/04 13:28:09 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char			**ft_minpath(t_room *rooms)
 		if (!temp && ++len) //reset to beginning 
 			temp = rooms;
 	}
-	return (ft_path(*temp));
+	return (ft_path(temp));
 }
 
 /*
