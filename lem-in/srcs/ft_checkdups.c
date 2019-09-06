@@ -6,11 +6,34 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 08:16:56 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/28 14:15:34 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/09/06 11:22:03 by vesingh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
+
+/*
+** ft_duplinks: might not be necessary?
+*/
+
+/*
+int			ft_duplinks(t_room **head)
+{
+	t_room	*start;
+	t_room	*clink;
+	t_room	*second;
+
+	start = *head;
+	while (start != NULL)
+	{
+		if (start->links == NULL)
+			start = start->next;
+		else
+		{
+			while (start->links)
+		}
+	}
+}*/
 
 /*
 ** ft_dupcoords: check for duplicate room coordinates, ie two rooms in the
