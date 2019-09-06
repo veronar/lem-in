@@ -6,7 +6,7 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 10:49:50 by anorman           #+#    #+#             */
-/*   Updated: 2019/09/04 13:28:09 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/06 11:02:14 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,9 @@ char			**ft_path(t_room *room)
 	if (!(path = (char **)malloc(sizeof(char *) * len + 1)))
 		return (NULL);
 	path[len] = NULL;
-	len = 0;
-	while (room)
+	while (len)
 	{
-		path[len++] = room->name;
+		path[--len] = room->name;
 		room = room->prev;
 	}
 	return (path);
@@ -71,9 +70,13 @@ char			**ft_minpath(t_room *rooms)
 	len = 0;
 	while (temp->start != -1 && temp->len != -1) //end when we have a len in end;
 	{
-		while (temp->len != len) //find shortest current
+		while (temp && temp->len != len) //find shortest current
 			temp = temp->next;
-		st_put_linklen(temp, len); //fill in linked nodes
+		if (temp)
+		{
+			st_put_linklen(temp, len); //fill in linked nodes
+			temp = temp->next;
+		}
 		if (!temp && ++len) //reset to beginning 
 			temp = rooms;
 	}
