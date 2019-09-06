@@ -6,11 +6,11 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 13:29:52 by anorman           #+#    #+#             */
-/*   Updated: 2019/09/04 14:45:10 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/06 09:07:32 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_ptrarrlen((void **)arr)
+int		ft_ptrarrlen(void **arr)
 {
 	int i;
 
