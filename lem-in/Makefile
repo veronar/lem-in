@@ -6,7 +6,7 @@
 #    By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 13:33:16 by vesingh           #+#    #+#              #
-#    Updated: 2019/09/04 14:49:50 by anorman          ###   ########.fr        #
+#    Updated: 2019/09/06 09:16:11 by anorman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ LEM_FUNC =	lemin.c\
 			ft_test.c\
 			ft_checkdups.c\
 			ft_minpath.c\
+			ft_pathfind.c
 
 LEM_FILES = $(addprefix $(L_DIR), $(LEM_FUNC))
 

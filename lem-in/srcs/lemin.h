@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/09/04 14:48:29 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/06 09:15:42 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void				ft_printlist(t_room **head);
 void				ft_printlinks(t_room **head);
 void				ft_check_ants(char *line);
 
-char				**ft_minpath(t_room *rooms);
+char				**ft_minpath(t_room *room);
+char				***ft_pathfind(t_room *room, int ants);
+void				ft_printpath(char ***paths);
 
 #endif
