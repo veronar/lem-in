@@ -6,7 +6,7 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 10:49:50 by anorman           #+#    #+#             */
-/*   Updated: 2019/09/06 14:45:00 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/10 11:24:12 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,30 @@ char			**ft_minpath(t_room *rooms)
 {
 	t_room	*temp;
 	int		len;
+	int		inf;
 
 	temp = rooms;
 	len = 0;
-	while (temp->start != -1 && temp->len != -1) //end when we have a len in end;
+	inf = 0;
+	while (!inf) //end when returned valid or infinite detected
 	{
+		if (temp == rooms)
+			inf = 1;
 		while (temp && temp->len != len) //find shortest current
 			temp = temp->next;
-		if (temp)
+		if (temp && temp->start != -1)
 		{
 			st_put_linklen(temp, len); //fill in linked nodes
 			temp = temp->next;
+			inf = 0;
 		}
+		else if (temp)
+			return (ft_path(temp)); //return when we have a len in end
 		if (!temp && ++len) //reset to beginning 
 			temp = rooms;
 	}
-	return (ft_path(temp));
+	write(1, "inf\n", 4);
+	return (NULL);
 }
 
 /*
