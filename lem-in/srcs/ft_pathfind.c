@@ -6,7 +6,7 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 12:04:31 by anorman           #+#    #+#             */
-/*   Updated: 2019/09/09 15:50:18 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/11 11:45:45 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@ void	ft_printpath(char ***paths)
 	{
 		i = 0;
 		printf("path %d\n", k);
-		while (paths[k][i])
+		while (paths[k][i] && paths[k][i + 1])
 			printf("%s to ", paths[k][i++]);
-		printf("end");
+		printf("%s", paths[k][i]);
 		printf("\n");
 		k++;
 	}
