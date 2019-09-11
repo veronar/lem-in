@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:33:11 by vesingh           #+#    #+#             */
-/*   Updated: 2019/09/11 11:44:12 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/11 12:14:55 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 ** malloced array. adds the new link and a null terminator at the end.
 */
 
-void		ft_linkinfo(t_room ***temp, t_room ***new, t_room **pointer, int size)
+void		ft_linkinfo(t_room ***temp,
+		t_room ***new, t_room **pointer, int size)
 {
 	int	i;
 
@@ -77,7 +78,7 @@ static int	st_linkback(t_room **current, t_room **pointer)
 ** new array.
 */
 
-int	ft_linkarr(t_room **current, t_room **pointer)
+int			ft_linkarr(t_room **current, t_room **pointer)
 {
 	t_room	**temp;
 	t_room	**new;
