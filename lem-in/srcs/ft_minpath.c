@@ -6,7 +6,7 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 10:49:50 by anorman           #+#    #+#             */
-/*   Updated: 2019/09/10 11:24:12 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/11 11:57:18 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void		st_put_linklen(t_room *node, int len)
 char			**ft_path(t_room *room)
 {
 	char	**path;
-	int		len;	
+	int		len;
 	t_room	*temp;
 
 	len = 0;
@@ -68,29 +68,28 @@ char			**ft_minpath(t_room *rooms)
 {
 	t_room	*temp;
 	int		len;
-	int		inf;
+	int		nopath;
 
 	temp = rooms;
 	len = 0;
 	inf = 0;
-	while (!inf) //end when returned valid or infinite detected
+	while (!nopath)
 	{
 		if (temp == rooms)
-			inf = 1;
-		while (temp && temp->len != len) //find shortest current
+			nopath = 1;
+		while (temp && temp->len != len)
 			temp = temp->next;
 		if (temp && temp->start != -1)
 		{
-			st_put_linklen(temp, len); //fill in linked nodes
+			st_put_linklen(temp, len);
 			temp = temp->next;
-			inf = 0;
+			nopath = 0;
 		}
 		else if (temp)
-			return (ft_path(temp)); //return when we have a len in end
-		if (!temp && ++len) //reset to beginning 
+			return (ft_path(temp));
+		if (!temp && ++len)
 			temp = rooms;
 	}
-	write(1, "inf\n", 4);
 	return (NULL);
 }
 
