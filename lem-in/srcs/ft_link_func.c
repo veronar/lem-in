@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:33:11 by vesingh           #+#    #+#             */
-/*   Updated: 2019/09/11 12:14:55 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/13 14:33:25 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,12 +148,12 @@ int			ft_splitlinks(t_room **head, char *str)
 void		ft_link_func(t_room **head_room, char *str)
 {
 	if (str[0] == 'L')
-		ft_error();
+		ft_error(1);
 	else if (ft_strchr(str, '-'))
 	{
 		if (ft_splitlinks(head_room, str) == -1)
-			ft_error();
+			ft_error(6);
 	}
 	else
-		ft_error();
+		ft_error(1);
 }

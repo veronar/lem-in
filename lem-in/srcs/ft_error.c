@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 11:11:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/30 11:17:26 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/09/13 14:17:43 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,18 @@
 ** ft_error: error on standard error
 */
 
-void		ft_error(void)
+void		ft_error(int ver)
 {
-	ft_putendl_fd("ERROR", 2);
+	if (ver == 1)
+		ft_putendl_fd("ERROR Invalid input", 2);
+	else if (ver == 2)
+		ft_putendl_fd("ERROR No valid path", 2);
+	else if (ver == 3)
+		ft_putendl_fd("ERROR something strange happened", 2);
+	else if (ver == 4)
+		ft_putendl_fd("ERROR malloc failed", 2);
+	else if (ver == 5)
+		ft_putendl_fd("ERROR duplicate room co-ordinates", 2);
 	//sleep(60);
 	exit(1);
 }

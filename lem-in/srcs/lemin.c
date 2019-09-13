@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:04:33 by vesingh           #+#    #+#             */
-/*   Updated: 2019/09/09 15:48:25 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/13 14:31:09 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int		main(int ac, char **av)
 	char	***paths;
 
 	(void)av;
-	if (ac > 1)
-		ft_error();
+	(void)ac;
+	//if (ac > 1)
+	//	ft_error();
 	head_room = NULL;
 	ants = ft_ants();
 	printf("ants = %i\n", ants);
