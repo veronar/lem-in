@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/09/06 12:40:43 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/13 14:15:41 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void				ft_reader(t_room **head_room);
 int					ft_ants(void);
 int					ft_do_line(t_room **head_room, char *str, int *start,\
 					int *end);
-void				ft_error(void);
+void				ft_error(int ver);
 void				ft_usage(void);
 int					ft_check_split(t_room **head_room, char *str,\
 					int *start, int *end);
