@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 11:11:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/09/13 14:17:43 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/13 16:52:14 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@ void		ft_error(int ver)
 	else if (ver == 2)
 		ft_putendl_fd("ERROR No valid path", 2);
 	else if (ver == 3)
-		ft_putendl_fd("ERROR something strange happened", 2);
+		ft_putendl_fd("ERROR Invalid ant quantity", 2);
 	else if (ver == 4)
 		ft_putendl_fd("ERROR malloc failed", 2);
 	else if (ver == 5)
 		ft_putendl_fd("ERROR duplicate room co-ordinates", 2);
+	else if (ver == 6)
+		ft_putendl_fd("ERROR room linking failed", 2);
+	else if (ver == 8)
+		ft_putendl_fd("ERROR something strange happened", 2);
 	//sleep(60);
 	exit(1);
 }
