@@ -3,3 +3,8 @@ For shortes paths you need a length in the rooms
 So start->len = 0; else->len = (-1 or INTMAX)
 
 start->prev needs to be NULL for path translation (prev etc into char **).
+
+when testing later, try adding a bunch of extra (invalid) ##commands everywhere
+
+lldb
+settings set target.input-path ../testfiles/pdfexample1.txt

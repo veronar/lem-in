@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 10:15:10 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/30 17:16:39 by marvin           ###   ########.fr       */
+/*   Updated: 2019/09/13 14:31:44 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		ft_check_ants(char *line)
 	while (line[len] && ft_isdigit(line[len]))
 		len++;
 	if (strlen(line) != len)
-		ft_error();
+		ft_error(8);
 }
 
 /*
@@ -50,11 +50,13 @@ int			ft_ants(void)
 		ft_memdel((void **)&line);
 		get_next_line(0, &line);
 	}
-	ft_check_ants(line);
+	//ft_check_ants(line);
+	if (ft_can_atoi(line) != 1) //can atoi returns 1 if it can atoi exactly (no extra chars)
+		ft_error(3); //
 	ants = ft_atoll(line);
 	ft_memdel((void**)&line);
-	if (ants < 1 || ants > 2147483647)
-		ft_error();
+	//if (ants < 1 || ants > 2147483647)
+	//	ft_error();
 //	printf("no. of ants: %lli\n", ants);
 	return (ants);
 }
@@ -78,15 +80,15 @@ void		ft_reader(t_room **head_room)
 	while (get_next_line(0, &line))
 	{
 		if (ft_do_line(head_room, line, &start, &end) == -1)
-			ft_error();
+			ft_error(1);
 		ft_memdel((void **)&line);
 	}
 	ft_memdel((void**)&line);
 	if (start != -1 || end != -1)
-		ft_error();
+		ft_error(2);
 	if (ft_checkdups(head_room) == -1)
 	{
 		ft_freelists(head_room);
-		ft_error();
+		ft_error(5);
 	}
 }

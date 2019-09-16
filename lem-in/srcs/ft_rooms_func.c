@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 11:36:07 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/30 09:53:06 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/09/06 13:12:13 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void		ft_command(t_room **current, int *start, int *end)
 	if (*start == 1)
 	{
 		(*current)->start = 1;
+		(*current)->len = 0;
 		*start = -1;
 	}
 	else if (*end == 1)

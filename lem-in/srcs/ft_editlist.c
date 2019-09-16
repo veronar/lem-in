@@ -6,7 +6,7 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 07:36:48 by vesingh           #+#    #+#             */
-/*   Updated: 2019/08/30 12:53:17 by vesingh          ###   ########.fr       */
+/*   Updated: 2019/09/06 13:06:41 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_room		*ft_newnode(void)
 	t_room	*head;
 
 	head = (t_room*)malloc(sizeof(t_room));
+	head->len = -1;
 	head->links = NULL;
 	head->next = NULL;
 	head->prev = NULL;
