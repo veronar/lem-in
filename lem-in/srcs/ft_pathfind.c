@@ -6,7 +6,7 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 12:04:31 by anorman           #+#    #+#             */
-/*   Updated: 2019/09/11 12:09:54 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/16 16:22:54 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,31 @@ int		st_maxpaths(t_room *rooms)
 ** "currently only does the shortest possible path."
 */
 
+void	st_pathclear(t_room *rooms)
+{
+	while (rooms)
+	{
+		if (rooms->len)
+			rooms->len = -1;
+		rooms = rooms->next;
+	}
+}
+
 void	st_findpaths(char ***paths, t_room *rooms, int ants)
 {
-	char	**min;
 	int		moves;
+	int 	i;
 
-	min = ft_minpath(rooms);
-	moves = ft_ptrarrlen((void **)min) + ants;
-	paths[0] = min;
-	paths[1] = NULL;
+	i = 0;
+	paths[0] = ft_minpath(rooms);
+	moves = ft_ptrarrlen((void **)(paths[0])) + ants;
+	while (paths[i++])
+	{
+		st_pathclear(rooms);
+		paths[i] = ft_minpath(rooms);
+	}
+	if (!(paths[0]))
+		ft_error(2);
 }
 
 /*
@@ -76,12 +92,9 @@ char	***ft_pathfind(t_room *rooms, int ants)
 	char	***paths;
 	int		maxpaths;
 
-	maxpaths = 1;
-	if (!(paths = (char ***)malloc(sizeof(char **) * maxpaths + 1)))
-	{
-		write(2, "Error paths malloc failed\n", 26);
-		return (NULL);
-	}
+	maxpaths = st_maxpaths(rooms);
+	if (!(paths = (char ***)malloc(sizeof(char **) * (maxpaths + 1))))
+		ft_error(4);
 	st_findpaths(paths, rooms, ants);
 	return (paths);
 }

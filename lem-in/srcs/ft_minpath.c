@@ -6,7 +6,7 @@
 /*   By: anorman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 10:49:50 by anorman           #+#    #+#             */
-/*   Updated: 2019/09/13 15:15:08 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/16 16:26:11 by anorman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char			**ft_path(t_room *room)
 	temp = room;
 	while (temp && ++len)
 		temp = temp->prev;
-	if (!(path = (char **)malloc(sizeof(char *) * len + 1)))
+	if (!(path = (char **)malloc(sizeof(char *) * (len + 1))))
 		return (NULL);
 	path[len] = NULL;
 	while (len)
@@ -56,8 +56,37 @@ char			**ft_path(t_room *room)
 	return (path);
 }
 
+char			**ft_excl_path(t_room *room)
+{
+	char	**path;
+	int		len;
+	t_room	*temp;
+
+	len = 0;
+	temp = room;
+	while (temp && ++len)
+		temp = temp->prev;
+	if (!(path = (char **)malloc(sizeof(char *) * (len + 1))))
+		return (NULL);
+	path[len] = NULL;
+	while (len)
+	{
+		if (room->start == 0)
+		{
+			free(room->links);
+			room->links = NULL;
+		}
+		path[--len] = room->name;
+		room = room->prev;
+	}
+	return (path);
+}
+
 /*
 ** Returns the path like a strsplit of the roomnames.
+**
+** excl_path removes the links of the middle rooms making them dead end
+** and thus excluded from future path finding.
 **
 ** path needs freeing but "dont free the roomnames"
 ** (the roomnames are just pointing at whats in each node)
@@ -86,11 +115,10 @@ char			**ft_minpath(t_room *rooms)
 			nopath = 0;
 		}
 		else if (temp)
-			return (ft_path(temp));
+			return (ft_excl_path(temp));
 		if (!temp && ++len)
 			temp = rooms;
 	}
-	ft_error(2);
 	return (NULL);
 }
 
