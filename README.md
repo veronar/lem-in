@@ -4,9 +4,9 @@ Alogrithms - Project 2 (Group)
 This project is meant to make you code an ant farm manager
 
 #### Group Members
-[Alistair Norman](https://github.com/anormanwtc)  
-[Vaughn Scott](https://github.com/VR-Scott)  
-[Bongani Nkosi](https://github.com/bnkosi2019)  
+- [Alistair Norman](https://github.com/anormanwtc)  
+- [Vaughn Scott](https://github.com/VR-Scott)  
+- [Bongani Nkosi](https://github.com/bnkosi2019)  
 
 ### **Description**
 
