@@ -6,13 +6,14 @@
 /*   By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 08:12:24 by vesingh           #+#    #+#             */
-/*   Updated: 2019/09/16 09:25:53 by anorman          ###   ########.fr       */
+/*   Updated: 2019/09/20 13:01:25 by bnkosi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEMIN_H
 # define LEMIN_H
 # include "../libft/libft.h"
+# include "colours.h"
 
 typedef struct		s_room
 {
@@ -25,6 +26,22 @@ typedef struct		s_room
 	struct s_room	*next;
 	struct s_room	*prev;
 }					t_room;
+
+typedef struct	s_move
+{
+	char		*room;
+	int			ant;
+}				t_move;
+
+typedef struct	s_print
+{
+	int			i;
+	int			len_tot;
+	int			n_path;
+	int			ant_tot;
+	int			*ant;
+	int			*len;
+}				t_print;
 
 void				ft_reader(t_room **head_room);
 int					ft_ants(void);
@@ -62,5 +79,24 @@ char				**ft_excl_path(t_room *room);
 char				**ft_minpath(t_room *room);
 char				***ft_pathfind(t_room *room, int ants);
 void				ft_printpath(char ***paths);
+
+void				move_ants(char ***path, int n_ant);
+
+void				split_ants(t_print *print);
+
+int					num_of_path(int n, int *len);
+void				change_col(int i);
+
+void				one_path(char **path, int n, int len);
+t_move				*make_move(char **path, int len);
+void				ant_turn(t_move *move, int i, int len);
+void				put_move(t_move *move, int len, int one, int j);
+void				del_move(t_move **move);
+void				multi_path(char ***path, t_print *print);
+
+void				turn_loop(t_print *print, t_move **moves);
+void				put_loop(t_print *print, t_move **moves);
+int					turn_amount(t_print *print);
+t_col				colours(void);
 
 #endif
