@@ -50,10 +50,8 @@ static void		del_moves(t_move ***moves)
 void			multi_path(char ***path, t_print *print)
 {
 	t_move	**moves;
-	int		j;
 	int		turns;
 
-	j = 0;
 	print->i = 1;
 	moves = make_moves(path, print->len, print->n_path);
 	turns = turn_amount(print);
@@ -61,7 +59,7 @@ void			multi_path(char ***path, t_print *print)
 	while (turns--)
 	{
 		turn_loop(print, moves);
-		j = 0;
+	//	j = 0;
 		put_loop(print, moves);
 		if (turns)
 			ft_putchar('\n');

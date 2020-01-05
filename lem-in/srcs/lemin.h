@@ -77,7 +77,8 @@ void				ft_check_ants(char *line);
 char				**ft_path(t_room *room);
 char				**ft_excl_path(t_room *room);
 char				**ft_minpath(t_room *room);
-char				***ft_pathfind(t_room *room, int ants);
+// char				***ft_pathfind(t_room *room, int ants);
+char				***ft_pathfind(t_room *room);
 void				ft_printpath(char ***paths);
 
 void				move_ants(char ***path, int n_ant);
@@ -97,6 +98,6 @@ void				multi_path(char ***path, t_print *print);
 void				turn_loop(t_print *print, t_move **moves);
 void				put_loop(t_print *print, t_move **moves);
 int					turn_amount(t_print *print);
-t_col				colours(void);
+char				**colours(void);
 
 #endif

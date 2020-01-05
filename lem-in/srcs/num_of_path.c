@@ -14,10 +14,10 @@
 
 void	change_col(int i)
 {
-	t_col	p;
+	char	*p[] = {COL_ARRAY};
 
-	p = colours();
-	ft_putstr(p.col[(i - 1) % 46]);
+	// p = {COL_ARRAY};
+	ft_putstr(p[(i - 1) % 46]);
 }
 
 int		num_of_path(int n, int *len)

@@ -29,7 +29,8 @@ int		main(int ac, char **av)
 //	ft_printlist(&head_room);
 //	ft_printlinks(&head_room);
 	write(1, "linked\n", 7);
-	paths = ft_pathfind(head_room, ants);
+	// paths = ft_pathfind(head_room, ants);
+	paths = ft_pathfind(head_room);
 	ft_printpath(paths);
 	move_ants(paths,ants);
 	//sleep(60);

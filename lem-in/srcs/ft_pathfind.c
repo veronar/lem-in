@@ -64,14 +64,15 @@ void	st_pathclear(t_room *rooms)
 	}
 }
 
-void	st_findpaths(char ***paths, t_room *rooms, int ants)
+//void	st_findpaths(char ***paths, t_room *rooms, int ants)
+void	st_findpaths(char ***paths, t_room *rooms)
 {
-	int		moves;
+	//int		moves;
 	int 	i;
 
 	i = 0;
 	paths[0] = ft_minpath(rooms);
-	moves = ft_ptrarrlen((void **)(paths[0])) + ants;
+	//moves = ft_ptrarrlen((void **)(paths[0])) + ants;
 	while (paths[i++])
 	{
 		st_pathclear(rooms);
@@ -87,7 +88,8 @@ void	st_findpaths(char ***paths, t_room *rooms, int ants)
 ** do maxpaths = st_maxpaths(rooms); when more paths are used
 */
 
-char	***ft_pathfind(t_room *rooms, int ants)
+// char	***ft_pathfind(t_room *rooms, int ants)
+char	***ft_pathfind(t_room *rooms)
 {
 	char	***paths;
 	int		maxpaths;
@@ -95,7 +97,8 @@ char	***ft_pathfind(t_room *rooms, int ants)
 	maxpaths = st_maxpaths(rooms);
 	if (!(paths = (char ***)malloc(sizeof(char **) * (maxpaths + 1))))
 		ft_error(4);
-	st_findpaths(paths, rooms, ants);
+	// st_findpaths(paths, rooms, ants);
+	st_findpaths(paths, rooms);
 	return (paths);
 }
 
