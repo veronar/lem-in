@@ -14,9 +14,10 @@
 
 void	change_col(int i)
 {
-	char	*p[] = {COL_ARRAY};
+	static char **p;
 
-	// p = {COL_ARRAY};
+	if (!p)
+		p = ft_strsplit(C0 C1 C2 C3 C4 C5 C6 C7 C8 C9, ',');
 	ft_putstr(p[(i - 1) % 46]);
 }
 
