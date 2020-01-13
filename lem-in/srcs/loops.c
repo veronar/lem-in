@@ -40,13 +40,20 @@ void		turn_loop(t_print *print, t_move **moves)
 
 static int	check_move(t_move *move, int len)
 {
-	while (len--)
-		ft_putchar('\t');
-		ft_putnbr(move[len].ant);
-		ft_putchar('\t');
-		if (move[len].ant)
-			return (1);
-	return (0);
+	if (move && len) {
+		return (1);
+	}
+	else {
+		return 0;
+	}
+
+	// while (len--) {		
+		// if (move[len].ant)
+		// {
+			// return (1);
+		// }
+	// }
+	// return (0);
 }
 
 // char		**colours(void)
@@ -75,11 +82,12 @@ void		put_loop(t_print *print, t_move **moves)
 	while (j <= print->n_path)
 	{
 		put_move(moves[j], print->len[j], 0, j);
+		
 		j++;
 		ft_putstr(CLEAR);
-		ft_putchar('\t');
-		ft_putnbr(j);
-		ft_putchar('\t');
+		// ft_putchar('\t');
+		// ft_putnbr(j);
+		// ft_putchar('\t');
 		if (check_move(moves[j], print->len[j]))
 		{
 			ft_putchar(' ');
