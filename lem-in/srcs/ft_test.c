@@ -63,7 +63,10 @@ void		ft_printlinks(t_room **head)
 	current = *head;
 	ft_putendl("\n\n");
 	while (current != NULL)
-	{
+	{	
+		ft_putstr("--------");
+		ft_putnbr(current->start);
+		ft_putchar('\n');
 		ft_putstr("--------");
 		ft_putstr(current->name);
 		ft_putendl("--------");

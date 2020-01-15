@@ -44,7 +44,7 @@ LEM_FILES = $(addprefix $(L_DIR), $(LEM_FUNC))
 all: $(NAME)
 
 $(NAME): $(LIBRARY_NAME) 
-	@gcc $(FLAGS) -o $(NAME) $(LEM_FILES) $(LIBRARY) 
+	@gcc $(FLAGS) -o $(NAME) $(LEM_FILES) $(LIBRARY)  
 	@echo "Lem-in Built!"
 
 $(LIBRARY_NAME):

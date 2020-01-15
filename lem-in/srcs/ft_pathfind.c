@@ -78,6 +78,7 @@ void	st_findpaths(char ***paths, t_room *rooms)
 		st_pathclear(rooms);
 		paths[i] = ft_minpath(rooms);
 	}
+	// ft_putstr("it gets here\n");
 	if (!(paths[0]))
 		ft_error(2);
 }
