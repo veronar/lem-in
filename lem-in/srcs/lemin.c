@@ -24,20 +24,17 @@ int		main(int ac, char **av)
 	//	ft_error();
 	head_room = NULL;
 	ants = ft_ants();
-	printf("ants = %i\n", ants);
+	ft_putnbr(ants);
+	ft_putchar('\n');
+	// printf("ants = %i\n", ants);
 	ft_reader(&head_room);
-
-	ft_printlinks(&head_room);
-
-	ft_startfirst(&head_room);
-	ft_putendl("After the change:\n");
+	// ft_printlinks(&head_room);
 	// ft_printlist(&head_room);
-	ft_printlinks(&head_room);
-	write(1, "linked\n", 7);
+	// write(1, "linked\n", 7);
 	// paths = ft_pathfind(head_room, ants);
 	paths = ft_pathfind(head_room);
-	write(1, "pathfound\n",10);
-	ft_printpath(paths);
+	// ft_printpath(paths);
+	ft_putchar('\n');
 	move_ants(paths,ants);
 	//sleep(60);
 	return (0);

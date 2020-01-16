@@ -79,6 +79,8 @@ void		ft_reader(t_room **head_room)
 	start = 0;
 	while (get_next_line(0, &line))
 	{
+		if(line[0])
+			ft_putendl(line);
 		if (ft_do_line(head_room, line, &start, &end) == -1)
 			ft_error(1);
 		ft_memdel((void **)&line);
