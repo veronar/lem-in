@@ -69,6 +69,8 @@ void				ft_linkinfo(t_room ***temp, t_room ***new, \
 					t_room **pointer, int size);
 int					ft_linkarr(t_room **current, t_room **pointer);
 
+void				ft_startfirst(t_room **head_room);
+
 void				ft_comment(char **str);
 void				ft_printlist(t_room **head);
 void				ft_printlinks(t_room **head);

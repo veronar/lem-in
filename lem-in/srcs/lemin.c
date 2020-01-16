@@ -26,12 +26,17 @@ int		main(int ac, char **av)
 	ants = ft_ants();
 	printf("ants = %i\n", ants);
 	ft_reader(&head_room);
+
+	ft_printlinks(&head_room);
+
+	ft_startfirst(&head_room);
+	ft_putendl("After the change:\n");
 	// ft_printlist(&head_room);
 	ft_printlinks(&head_room);
 	write(1, "linked\n", 7);
 	// paths = ft_pathfind(head_room, ants);
 	paths = ft_pathfind(head_room);
-	// write(1, "pathfound\n",10);
+	write(1, "pathfound\n",10);
 	ft_printpath(paths);
 	move_ants(paths,ants);
 	//sleep(60);

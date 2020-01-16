@@ -38,6 +38,8 @@ void		ft_command(t_room **current, int *start, int *end)
 		ft_putendl("found end");
 		(*current)->start = -1;
 		*end = -1;
+		ft_putnbr((*current)->start);
+		ft_putendl(" is the start");
 	}
 	else
 		(*current)->start = 0;

@@ -22,6 +22,7 @@ FLAGS = -Wall -Werror -Wextra
 
 LEM_FUNC =	lemin.c\
 			ft_reader.c\
+			ft_startfirst.c\
 			ft_do_line.c\
 			ft_error.c\
 			ft_check_split.c\

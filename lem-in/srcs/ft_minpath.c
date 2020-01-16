@@ -29,7 +29,7 @@ static void		st_put_linklen(t_room *node, int len)
 			{
 				// ft_putstr(temp[i]->name);//testing
 				// ft_putnbr(temp[i]->start);//testing
-				sleep(5); //testing
+				//sleep(5); //testing
 				// (*temp)->len = len + 1;
 				// (*temp)->prev = node;
 				temp[i]->len = len + 1;//testing
@@ -115,14 +115,14 @@ char			**ft_minpath(t_room *rooms)
 	while (!nopath)
 	{
 		
-		ft_putstr(temp->name);
-		ft_putstr("->start is : ");
-		ft_putnbr(temp->start);
-		ft_putchar('\n');
-		ft_putstr(temp->name);
-		ft_putstr("->len is : ");
-		ft_putnbr(temp->len);
-		ft_putchar('\n');
+		// ft_putstr(temp->name);
+		// ft_putstr("->start is : ");
+		// ft_putnbr(temp->start);
+		// ft_putchar('\n');
+		// ft_putstr(temp->name);
+		// ft_putstr("->len is : ");
+		// ft_putnbr(temp->len);
+		// ft_putchar('\n');
 		if (temp == rooms)
 			nopath = 1;
 		while (temp && temp->len != len)	//Got to here.
@@ -136,6 +136,7 @@ char			**ft_minpath(t_room *rooms)
 		}
 		else if (temp)
 			return (ft_excl_path(temp));
+		// ft_putendl("get's here.");
 		if (!temp && ++len)
 			temp = rooms;
 	}
