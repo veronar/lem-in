@@ -6,7 +6,7 @@
 #    By: vesingh <vesingh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 13:33:16 by vesingh           #+#    #+#              #
-#    Updated: 2019/09/20 13:53:17 by bnkosi           ###   ########.fr        #
+#    Updated: 2020/01/16 14:53:30 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ LEM_FILES = $(addprefix $(L_DIR), $(LEM_FUNC))
 all: $(NAME)
 
 $(NAME): $(LIBRARY_NAME) 
-	@gcc $(FLAGS) -o $(NAME) $(LEM_FILES) $(LIBRARY)  
+	@gcc -g $(FLAGS) -o $(NAME) $(LEM_FILES) $(LIBRARY)  
 	@echo "Lem-in Built!"
 
 $(LIBRARY_NAME):

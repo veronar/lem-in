@@ -25,7 +25,7 @@ static void		st_put_linklen(t_room *node, int len)
 		while (temp[i])//testing
 		{
 			// if ((*temp)->len == -1)//Come back here
-			if (temp[i]->len == -1) //testing
+			if (temp[i]->len == -1) // if length to the new room is unset we set it and how we got there
 			{
 				// ft_putstr(temp[i]->name);//testing
 				// ft_putnbr(temp[i]->start);//testing
@@ -79,6 +79,11 @@ char			**ft_excl_path(t_room *room)
 	if (!(path = (char **)malloc(sizeof(char *) * (len + 1))))
 		return (NULL);
 	path[len] = NULL;
+	if (room->prev->start == 1) //should fix the start->end segfault.
+		{
+			free(room->prev->links);
+			room->prev->links = NULL;
+		}
 	while (len)
 	{
 		if (room->start == 0)
@@ -127,14 +132,16 @@ char			**ft_minpath(t_room *rooms)
 			nopath = 1;
 		while (temp && temp->len != len)	//Got to here.
 			temp = temp->next;
-		if (temp && temp->start != -1)
+		if (len == 0 && temp)
+			temp->prev = NULL; //setting start->prev to null
+		if (temp && temp->start != -1) //if Ive found len and not at end
 		{
-			st_put_linklen(temp, len);
+			st_put_linklen(temp, len); //found next room, setting its prev and lengths after it.
 			// ft_putendl(temp->name);
 			temp = temp->next;
 			nopath = 0;
 		}
-		else if (temp)
+		else if (temp) // if am at end, exlude found path/
 			return (ft_excl_path(temp));
 		// ft_putendl("get's here.");
 		if (!temp && ++len)
