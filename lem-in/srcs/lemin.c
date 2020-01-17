@@ -28,11 +28,20 @@ int		main(int ac, char **av)
 	ft_putchar('\n');
 	// printf("ants = %i\n", ants);
 	ft_reader(&head_room);
+	if (!ants)
+	{
+		ft_freelists(head_room);
+		return (0);
+	}
 	// ft_printlinks(&head_room);
 	// ft_printlist(&head_room);
 	// write(1, "linked\n", 7);
 	// paths = ft_pathfind(head_room, ants);
-	paths = ft_pathfind(head_room);
+	if (!paths = ft_pathfind(head_room))
+	{
+		ft_freelists(head_room);
+		return(-1);
+	}
 	// ft_printpath(paths);
 	ft_putchar('\n');
 	move_ants(paths,ants);
