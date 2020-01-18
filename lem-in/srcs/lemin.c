@@ -30,16 +30,16 @@ int		main(int ac, char **av)
 	ft_reader(&head_room);
 	if (!ants)
 	{
-		ft_freelists(head_room);
+		ft_freelists(&head_room);
 		return (0);
 	}
 	// ft_printlinks(&head_room);
 	// ft_printlist(&head_room);
 	// write(1, "linked\n", 7);
 	// paths = ft_pathfind(head_room, ants);
-	if (!paths = ft_pathfind(head_room))
+	if (!(paths = ft_pathfind(head_room)))
 	{
-		ft_freelists(head_room);
+		ft_freelists(&head_room);
 		return(-1);
 	}
 	// ft_printpath(paths);

@@ -53,7 +53,7 @@ void		ft_error_exit(int ver)
 	else if (ver == 8)
 		ft_putendl_fd("ERROR something strange happened", 2);
 	//sleep(60);
-	exit ;
+	exit (1) ;
 }
 
 /*
@@ -70,7 +70,11 @@ void	ft_free_linkarr(t_room **arr)
 	if (*arr == NULL)
 		return ;
 	while (arr[i])
-	{
+	{	
+		ft_putendl("Got to here");
+		ft_putnbr(i);
+		ft_putchar('\n');
+		// ft_putendl(arr[i]->name);
 		ft_memdel((void **)&arr[i]);
 		i++;
 	}
@@ -95,6 +99,7 @@ void		ft_freelists(t_room **head)
 	current = *head;
 	while (current != NULL)
 	{
+		ft_putendl(current->name);
 		ft_free_linkarr(current->links);
 		second = current->next;
 		free(current->name);

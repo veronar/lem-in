@@ -48,6 +48,7 @@ int					ft_ants(void);
 int					ft_do_line(t_room **head_room, char *str, int *start,\
 					int *end);
 void				ft_error(int ver);
+void				ft_error_exit(int ver);
 void				ft_usage(void);
 int					ft_check_split(t_room **head_room, char *str,\
 					int *start, int *end);

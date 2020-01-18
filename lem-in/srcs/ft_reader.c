@@ -55,7 +55,7 @@ int			ft_ants(void)
 	{
 		ft_error(3);
 		ft_memdel((void**)&line);
-		exit ;
+		exit (1);
 	}
 	ants = ft_atoll(line);
 	ft_memdel((void**)&line);
@@ -86,13 +86,21 @@ void		ft_reader(t_room **head_room)
 		if(line[0])
 			ft_putendl(line);
 		if (ft_do_line(head_room, line, &start, &end) == -1)
-			ft_error(1);
+		{
+			ft_freelists(head_room);
+			ft_error_exit(1);
+			ft_memdel((void**)&line);
+		}
+		ft_printlinks(head_room);
 		ft_memdel((void**)&line);
 	}
-	(line != NULL) ? ft_memdel((void **)&line) : 0;
+	ft_memdel((void **)&line);
 	if (start != -1 || end != -1 || ft_checkdups(head_room) == -1)
-	{
+	{		
 		ft_freelists(head_room);
-		(start != -1 || end != -1) ? ft_error_exit(2) : ft_error_exit(5);
+		if (start != -1 || end != -1)
+			ft_error_exit(2);
+		else
+			ft_error_exit(5);
 	}
 }
