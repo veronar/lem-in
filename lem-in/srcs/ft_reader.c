@@ -91,12 +91,11 @@ void		ft_reader(t_room **head_room)
 			ft_error_exit(1);
 			ft_memdel((void**)&line);
 		}
-		ft_printlinks(head_room);
 		ft_memdel((void**)&line);
 	}
 	ft_memdel((void **)&line);
 	if (start != -1 || end != -1 || ft_checkdups(head_room) == -1)
-	{		
+	{
 		ft_freelists(head_room);
 		if (start != -1 || end != -1)
 			ft_error_exit(2);

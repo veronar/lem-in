@@ -56,6 +56,9 @@ void		ft_error_exit(int ver)
 	exit (1) ;
 }
 
+
+
+
 /*
 ** ft_free_linkarr: adaption of ft_free_her (ft_check_split.c) - for t_room**.
 ** frees all elements in an a pointer array.
@@ -64,20 +67,18 @@ void		ft_error_exit(int ver)
 
 void	ft_free_linkarr(t_room **arr)
 {
-	int	i;
+	// int	i;
 
-	i = 0;
-	if (*arr == NULL)
+	// i = 0;
+	// if (!arr || !*arr)
+	if (!arr)
 		return ;
-	while (arr[i])
-	{	
-		ft_putendl("Got to here");
-		ft_putnbr(i);
-		ft_putchar('\n');
-		// ft_putendl(arr[i]->name);
-		ft_memdel((void **)&arr[i]);
-		i++;
-	}
+	// while (arr[i])
+	// {
+	// 	// ft_putendl(arr[i]->name);
+	// 	ft_memdel((void **)&arr[i]);
+	// 	i++;
+	// }
 	free(arr);
 }
 
@@ -99,8 +100,10 @@ void		ft_freelists(t_room **head)
 	current = *head;
 	while (current != NULL)
 	{
-		ft_putendl(current->name);
-		ft_free_linkarr(current->links);
+		// test_here();
+		// ft_putendl(current->name);
+		ft_free_linkarr((current->links));
+		// free(current->links);
 		second = current->next;
 		free(current->name);
 		free(current);
