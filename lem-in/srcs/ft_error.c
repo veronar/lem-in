@@ -52,7 +52,7 @@ void		ft_error_exit(int ver)
 		ft_putendl_fd("ERROR room linking failed", 2);
 	else if (ver == 8)
 		ft_putendl_fd("ERROR something strange happened", 2);
-	//sleep(60);
+	sleep(30);
 	exit (1) ;
 }
 

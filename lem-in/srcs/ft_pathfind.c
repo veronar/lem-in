@@ -81,6 +81,7 @@ void	st_findpaths(char ***paths, t_room *rooms)
 	// ft_putstr("it gets here\n");
 	if (!(paths[0]))
 		ft_error(2);
+	// sleep(30);
 }
 
 /*
@@ -98,6 +99,7 @@ char	***ft_pathfind(t_room *rooms)
 	if(!(maxpaths = st_maxpaths(rooms)))
 	{
 		ft_error(2);
+		// sleep(30);
 		return (NULL);
 	}
 	if (!(paths = (char ***)malloc(sizeof(char **) * (maxpaths + 1))))
@@ -107,6 +109,7 @@ char	***ft_pathfind(t_room *rooms)
 	}
 	// st_findpaths(paths, rooms, ants);
 	st_findpaths(paths, rooms);
+	// sleep(30);
 	return (paths);
 }
 

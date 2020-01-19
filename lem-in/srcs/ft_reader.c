@@ -88,8 +88,8 @@ void		ft_reader(t_room **head_room)
 		if (ft_do_line(head_room, line, &start, &end) == -1)
 		{
 			ft_freelists(head_room);
-			ft_error_exit(1);
 			ft_memdel((void**)&line);
+			ft_error_exit(1);
 		}
 		ft_memdel((void**)&line);
 	}
