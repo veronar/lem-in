@@ -36,6 +36,26 @@ void		ft_error(int ver)
 	return ;
 }
 
+int		ft_error_ret(int ver, int ret)
+{
+	if (ver == 1)
+		ft_putendl_fd("ERROR Invalid input", 2);
+	else if (ver == 2)
+		ft_putendl_fd("ERROR No valid path", 2);
+	else if (ver == 3)
+		ft_putendl_fd("ERROR Invalid ant quantity", 2);
+	else if (ver == 4)
+		ft_putendl_fd("ERROR malloc failed", 2);
+	else if (ver == 5)
+		ft_putendl_fd("ERROR duplicate room co-ordinates", 2);
+	else if (ver == 6)
+		ft_putendl_fd("ERROR room linking failed", 2);
+	else if (ver == 8)
+		ft_putendl_fd("ERROR something strange happened", 2);
+	//sleep(60);
+	return (ret);
+}
+
 void		ft_error_exit(int ver)
 {
 	if (ver == 1)
@@ -52,7 +72,7 @@ void		ft_error_exit(int ver)
 		ft_putendl_fd("ERROR room linking failed", 2);
 	else if (ver == 8)
 		ft_putendl_fd("ERROR something strange happened", 2);
-	sleep(30);
+	// sleep(30);
 	exit (1) ;
 }
 

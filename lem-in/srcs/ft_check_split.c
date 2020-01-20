@@ -61,7 +61,7 @@ int		ft_check_split(t_room **head_room, char *str, int *start, int *end)
 	{
 		link = 1;
 		ft_free_her(arr);
-		ft_link_func(head_room, str);
+		return(ft_link_func(head_room, str));
 	}
 	return (1);
 }

@@ -145,15 +145,20 @@ int			ft_splitlinks(t_room **head, char *str)
 ** use ft_splitlinks to split & store the links.
 */
 
-void		ft_link_func(t_room **head_room, char *str)
+int			ft_link_func(t_room **head_room, char *str)
 {
 	if (str[0] == 'L')
-		ft_error_exit(1);
+		return (-1);
 	else if (ft_strchr(str, '-'))
 	{
 		if (ft_splitlinks(head_room, str) == -1)
-			ft_error(6);
+		{
+			ft_freelists(head_room);
+			ft_memdel((void **)&str);
+			ft_error_exit(6);
+		}
 	}
 	else
-		ft_error(1);
+		return (-1);
+	return (1);
 }

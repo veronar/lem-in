@@ -49,11 +49,12 @@ int					ft_do_line(t_room **head_room, char *str, int *start,\
 					int *end);
 void				ft_error(int ver);
 void				ft_error_exit(int ver);
+int					ft_error_ret(int ver, int ret);
 void				ft_usage(void);
 int					ft_check_split(t_room **head_room, char *str,\
 					int *start, int *end);
 void				ft_free_her(char **arr);
-void				ft_link_func(t_room **head_room, char *str);
+int					ft_link_func(t_room **head_room, char *str);
 int					ft_rooms_func(t_room **head_room, char **arr,\
 					int *start, int *end);
 int					ft_check_coords(char **arr);

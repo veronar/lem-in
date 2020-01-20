@@ -80,7 +80,10 @@ void	st_findpaths(char ***paths, t_room *rooms)
 	}
 	// ft_putstr("it gets here\n");
 	if (!(paths[0]))
+	{
+		ft_memdel(&paths);
 		ft_error(2);
+	}
 	// sleep(30);
 }
 

@@ -17,16 +17,16 @@
 ** ants
 */
 
-void		ft_check_ants(char *line)
-{
-	size_t	len;
+// void		ft_check_ants(char *line)
+// {
+// 	size_t	len;
 
-	len = 0;
-	while (line[len] && ft_isdigit(line[len]))
-		len++;
-	if (strlen(line) != len)
-		ft_error(8);
-}
+// 	len = 0;
+// 	while (line[len] && ft_isdigit(line[len]))
+// 		len++;
+// 	if (strlen(line) != len)
+// 		ft_error(8);
+// }
 
 /*
 ** ft_ants: checks the first line to be read, if it not digits only, return
