@@ -40,39 +40,15 @@ void		turn_loop(t_print *print, t_move **moves)
 
 static int	check_move(t_move *move, int len)
 {
-	if (move && len) {
+	if (move && len)
+	{
 		return (1);
 	}
-	else {
-		return 0;
+	else
+	{
+		return (0);
 	}
-
-	// while (len--) {		
-		// if (move[len].ant)
-		// {
-			// return (1);
-		// }
-	// }
-	// return (0);
 }
-
-// char		**colours(void)
-// {
-// 	char	*col[] = {COL_ARRAY};
-
-// 	// col = {COL_ARRAY};
-// 	// c = (t_col){{BLACK_RED, BLACK_GREEN, BLACK_YELLOW,
-// 	// BLACK_MAG, BLACK_CYAN, BLACK_WHITE, RED_BLACK, RED_GREEN, RED_YELLOW,
-// 	// RED_BLUE, RED_CYAN, RED_WHITE, GREEN_BLACK, GREEN_RED,
-// 	// GREEN_BLUE, GREEN_MAG, GREEN_WHITE,
-// 	// YELLOW_BLACK, YELLOW_RED, YELLOW_BLUE, YELLOW_MAG,
-// 	// YELLOW_WHITE, BLUE_RED, BLUE_GREEN, BLUE_YELLOW,
-// 	// BLUE_MAG, BLUE_CYAN, BLUE_WHITE, MAG_BLACK, MAG_GREEN,
-// 	// MAG_YELLOW, MAG_BLUE, MAG_CYAN, MAG_WHITE, CYAN_BLACK, CYAN_RED,
-// 	// CYAN_BLUE, CYAN_MAG, CYAN_WHITE, WHITE_BLACK,
-// 	// WHITE_RED, WHITE_GREEN, WHITE_YELLOW, WHITE_BLUE, WHITE_MAG, WHITE_CYAN}};
-// 	return (col);
-// }
 
 void		put_loop(t_print *print, t_move **moves)
 {
@@ -82,12 +58,8 @@ void		put_loop(t_print *print, t_move **moves)
 	while (j <= print->n_path)
 	{
 		put_move(moves[j], print->len[j], 0, j);
-		
 		j++;
 		ft_putstr(CLEAR);
-		// ft_putchar('\t');
-		// ft_putnbr(j);
-		// ft_putchar('\t');
 		if (check_move(moves[j], print->len[j]))
 		{
 			ft_putchar(' ');

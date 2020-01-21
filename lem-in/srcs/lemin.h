@@ -27,21 +27,21 @@ typedef struct		s_room
 	struct s_room	*prev;
 }					t_room;
 
-typedef struct	s_move
+typedef struct		s_move
 {
-	char		*room;
-	int			ant;
-}				t_move;
+	char			*room;
+	int				ant;
+}					t_move;
 
-typedef struct	s_print
+typedef struct		s_print
 {
-	int			i;
-	int			len_tot;
-	int			n_path;
-	int			ant_tot;
-	int			*ant;
-	int			*len;
-}				t_print;
+	int				i;
+	int				len_tot;
+	int				n_path;
+	int				ant_tot;
+	int				*ant;
+	int				*len;
+}					t_print;
 
 void				ft_reader(t_room **head_room);
 int					ft_ants(void);
@@ -81,7 +81,6 @@ void				ft_check_ants(char *line);
 char				**ft_path(t_room *room);
 char				**ft_excl_path(t_room *room);
 char				**ft_minpath(t_room *room);
-// char				***ft_pathfind(t_room *room, int ants);
 char				***ft_pathfind(t_room *room);
 void				ft_printpath(char ***paths);
 
@@ -104,6 +103,7 @@ void				put_loop(t_print *print, t_move **moves);
 int					turn_amount(t_print *print);
 char				**colours(void);
 
-// void				test_here(); //breakpoint
+void				ft_freepaths(char ****path_address);
+void				ft_free_links(t_room *room);
 
 #endif

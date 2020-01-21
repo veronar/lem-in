@@ -78,13 +78,6 @@ int			ft_check_coords(char **arr)
 	return (1);
 }
 
-// void	test_here() //breakpoint
-// {
-// 	ft_putendl("here?");
-// }
-
- 
-
 /*
 ** ft_rooms_func: If the array is 3 items long,
 ** checks if it is a start or end room with ft_command
@@ -107,7 +100,6 @@ int			ft_rooms_func(t_room **head_room, char **arr, int *start, int *end)
 		ft_list_del(head_room);
 		return (-1);
 	}
-	// test_here(); //breakpoint
 	current->name = ft_strdup(arr[0]);
 	current->x = ft_atoi(arr[1]);
 	current->y = ft_atoi(arr[2]);

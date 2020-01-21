@@ -44,6 +44,7 @@ static void		del_moves(t_move ***moves)
 	i = 0;
 	while ((*moves)[i])
 		del_move(&(*moves)[i++]);
+	free(*moves);
 	*moves = NULL;
 }
 
@@ -59,7 +60,6 @@ void			multi_path(char ***path, t_print *print)
 	while (turns--)
 	{
 		turn_loop(print, moves);
-	//	j = 0;
 		put_loop(print, moves);
 		if (turns)
 			ft_putchar('\n');

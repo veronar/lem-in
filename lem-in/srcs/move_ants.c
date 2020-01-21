@@ -77,4 +77,6 @@ void		move_ants(char ***path, int n_ant)
 	}
 	del_ant_len(&(print->ant));
 	del_ant_len(&(print->len));
+	free(print);
+	print = NULL;
 }

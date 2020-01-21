@@ -15,28 +15,18 @@
 static void		st_put_linklen(t_room *node, int len)
 {
 	t_room **temp;
-	int	i;	//testing
 
-	i = 0; // testing
 	temp = node->links;
 	if (temp)
 	{
-		// while (*temp)
-		while (temp[i])//testing
+		while (*temp)
 		{
-			// if ((*temp)->len == -1)//Come back here
-			if (temp[i]->len == -1) // if length to the new room is unset we set it and how we got there
+			if ((*temp)->len == -1)
 			{
-				// ft_putstr(temp[i]->name);//testing
-				// ft_putnbr(temp[i]->start);//testing
-				//sleep(5); //testing
-				// (*temp)->len = len + 1;
-				// (*temp)->prev = node;
-				temp[i]->len = len + 1;//testing
-				temp[i]->prev = node;//testing
+				(*temp)->len = len + 1;
+				(*temp)->prev = node;
 			}
-			//temp++;
-			i++; //testing
+			temp++;
 		}
 	}
 }
@@ -79,22 +69,23 @@ char			**ft_excl_path(t_room *room)
 	if (!(path = (char **)malloc(sizeof(char *) * (len + 1))))
 		return (NULL);
 	path[len] = NULL;
-	if (room->prev->start == 1) //should fix the start->end segfault.
-		{
-			free(room->prev->links);
-			room->prev->links = NULL;
-		}
+	if (room->prev->start == 1)
+		ft_free_links(room->prev);
 	while (len)
 	{
 		if (room->start == 0)
-		{
-			free(room->links);
-			room->links = NULL;
-		}
+			ft_free_links(room);
 		path[--len] = room->name;
 		room = room->prev;
 	}
 	return (path);
+}
+
+static int		ft_run_put_linklen(t_room **temp, int len)
+{
+	st_put_linklen(*temp, len);
+	*temp = (*temp)->next;
+	return (0);
 }
 
 /*
@@ -119,31 +110,16 @@ char			**ft_minpath(t_room *rooms)
 	nopath = 0;
 	while (!nopath)
 	{
-		
-		// ft_putstr(temp->name);
-		// ft_putstr("->start is : ");
-		// ft_putnbr(temp->start);
-		// ft_putchar('\n');
-		// ft_putstr(temp->name);
-		// ft_putstr("->len is : ");
-		// ft_putnbr(temp->len);
-		// ft_putchar('\n');
 		if (temp == rooms)
 			nopath = 1;
-		while (temp && temp->len != len)	//Got to here.
+		while (temp && temp->len != len)
 			temp = temp->next;
 		if (len == 0 && temp)
-			temp->prev = NULL; //setting start->prev to null
-		if (temp && temp->start != -1) //if Ive found len and not at end
-		{
-			st_put_linklen(temp, len); //found next room, setting its prev and lengths after it.
-			// ft_putendl(temp->name);
-			temp = temp->next;
-			nopath = 0;
-		}
-		else if (temp) // if am at end, exlude found path/
+			temp->prev = NULL;
+		if (temp && temp->start != -1)
+			nopath = ft_run_put_linklen(&temp, len);
+		else if (temp)
 			return (ft_excl_path(temp));
-		// ft_putendl("get's here.");
 		if (!temp && ++len)
 			temp = rooms;
 	}

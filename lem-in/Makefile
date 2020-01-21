@@ -22,14 +22,13 @@ FLAGS = -Wall -Werror -Wextra
 
 LEM_FUNC =	lemin.c\
 			ft_reader.c\
-			ft_startfirst.c\
 			ft_do_line.c\
 			ft_error.c\
+			ft_frees.c\
 			ft_check_split.c\
 			ft_link_func.c\
 			ft_rooms_func.c\
 			ft_editlist.c\
-			ft_test.c\
 			ft_checkdups.c\
 			ft_minpath.c\
 			move_ants.c\

@@ -17,17 +17,6 @@
 ** ants
 */
 
-// void		ft_check_ants(char *line)
-// {
-// 	size_t	len;
-
-// 	len = 0;
-// 	while (line[len] && ft_isdigit(line[len]))
-// 		len++;
-// 	if (strlen(line) != len)
-// 		ft_error(8);
-// }
-
 /*
 ** ft_ants: checks the first line to be read, if it not digits only, return
 ** error. If it is only digits, convert it to a long long, and then check
@@ -50,18 +39,15 @@ int			ft_ants(void)
 		ft_memdel((void **)&line);
 		get_next_line(0, &line);
 	}
-	//ft_check_ants(line);
-	if (ft_can_atoi(line) != 1) //can atoi returns 1 if it can atoi exactly (no extra chars)
+	if (ft_can_atoi(line) != 1)
 	{
 		ft_error(3);
 		ft_memdel((void**)&line);
-		exit (1);
+		exit(1);
 	}
 	ants = ft_atoll(line);
 	ft_memdel((void**)&line);
-	//if (ants < 1 || ants > 2147483647)
-	//	ft_error();
-//	printf("no. of ants: %lli\n", ants);
+	ft_putnbr(ants);
 	return (ants);
 }
 
@@ -83,7 +69,7 @@ void		ft_reader(t_room **head_room)
 	start = 0;
 	while (get_next_line(0, &line))
 	{
-		if(line[0])
+		if (line[0])
 			ft_putendl(line);
 		if (ft_do_line(head_room, line, &start, &end) == -1)
 		{
@@ -97,9 +83,6 @@ void		ft_reader(t_room **head_room)
 	if (start != -1 || end != -1 || ft_checkdups(head_room) == -1)
 	{
 		ft_freelists(head_room);
-		if (start != -1 || end != -1)
-			ft_error_exit(2);
-		else
-			ft_error_exit(5);
+		ft_error_exit((start != -1 || end != -1) ? 2 : 5);
 	}
 }

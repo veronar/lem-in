@@ -13,29 +13,6 @@
 #include "lemin.h"
 
 /*
-** ft_duplinks: might not be necessary?
-*/
-
-/*
-int			ft_duplinks(t_room **head)
-{
-	t_room	*start;
-	t_room	*clink;
-	t_room	*second;
-
-	start = *head;
-	while (start != NULL)
-	{
-		if (start->links == NULL)
-			start = start->next;
-		else
-		{
-			while (start->links)
-		}
-	}
-}*/
-
-/*
 ** ft_dupcoords: check for duplicate room coordinates, ie two rooms in the
 ** same place.
 ** if true, error.
