@@ -6,7 +6,7 @@ This project is meant to make you code an ant farm manager
 #### Group Members
 - [Alistair Norman](https://github.com/anormanwtc)  
 - [Vaughn Scott](https://github.com/VR-Scott)  
-- [Bongani Nkosi](https://github.com/bnkosi2019)  
+- [Bongani Nkosi](https://github.com/Salsa-socks)  
 
 ### **Description**
 
